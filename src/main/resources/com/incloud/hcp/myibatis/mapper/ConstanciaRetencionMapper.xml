@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.ConstanciaRetencionMaper">
+
+
+
+
+    <resultMap id="retencionDetalleResultMap" type="com.incloud.hcp.dto.ConstanciaRetencionProveedorDto">
+        <id property="idConstanciaRetencion" column="ID_CONSTANCIA_RETENCION"/>
+        <result property="nroRetencion" column="NRO_RETENCION" />
+        <result property="emailProveedor" column="EMAIL" />
+        <result property="razonSocialProveedor" column="RAZON_SOCIAL" />
+    </resultMap>
+
+    <resultMap id="retencionesResultMap" type="com.incloud.hcp.dto.ConstanciaRetencionDto">
+        <id property="idConstanciaRetencion" column="idConstanciaRetencion"/>
+        <result property="nombreEmisor" column="nombreEmisor" />
+        <result property="rucEmisor" column="rucEmisor" />
+        <result property="nombreProveedor" column="nombreProveedor" />
+        <result property="rucProveedor" column="rucProveedor" />
+        <result property="nroRetencion" column="nroRetencion" />
+        <result property="nroFactura" column="nroFactura" />
+        <result property="totalFactura" column="totalFactura" />
+        <result property="neto" column="neto" />
+        <result property="retencion" column="retencion" />
+        <result property="moneda" column="monedaRetencion" />
+        <result property="fechaDoc" column="fechaDoc" />
+    </resultMap>
+
+
+    <select id="obtenerListaProveedores" resultMap="retencionDetalleResultMap">
+        SELECT
+            cr.ID_CONSTANCIA_RETENCION,
+            cr.NRO_RETENCION,
+            p.EMAIL,
+            p.RAZON_SOCIAL
+        FROM CONSTANCIA_RETENCION cr
+            INNER JOIN PROVEEDOR p ON cr.RUC_PROVEEDOR = p.RUC
+        WHERE cr.ENVIA_CORREO = FALSE ;
+    </select>
+
+
+    <select id="obtenerDatosRetenciones" resultMap="retencionesResultMap">
+        SELECT
+        cr.ID_CONSTANCIA_RETENCION AS idConstanciaRetencion,
+        cr.NOMBRE_EMISOR AS nombreEmisor,
+        cr.RUC_EMISOR AS rucEmisor,
+        cr.NOMBRE_PROVEEDOR AS nombreProveedor,
+        cr.RUC_PROVEEDOR AS rucProveedor,
+        cr.NRO_RETENCION AS nroRetencion,
+        crd.NRO_FACTURA  AS nroFactura,
+        crd.TOTAL_FACTURA AS totalFactura,
+        crd.NETO_PAGADO AS neto,
+        crd.RETENCION AS retencion,
+        crd.MONEDA_CONVERTIDA AS monedaRetencion,
+        to_char(cr.FECHA_DOC, 'yyyy-MM-dd') AS fechaDoc
+        FROM CONSTANCIA_RETENCION cr
+        INNER JOIN CONSTANCIA_RETENCION_DETALLE crd
+        ON cr.ID_CONSTANCIA_RETENCION = crd.ID_CONSTANCIA_RETENCION
+        WHERE 1 = 1
+        <if test="nombreProveedor != null and nombreProveedor != ''">
+            AND cr.NOMBRE_PROVEEDOR LIKE '%' || #{nombreProveedor} ||'%'
+        </if>
+        <if test="fechaInicio != null">
+            AND cr.FECHA_DOC &gt;= #{fechaInicio}
+        </if>
+        <if test="fechaFin != null">
+            AND cr.FECHA_DOC &lt;= #{fechaFin}
+        </if>
+        <if test="nroRetencion != null and nroRetencion != ''">
+            AND cr.NRO_RETENCION LIKE '%' || #{nroRetencion} || '%'
+        </if>
+        <if test="rucProveedor != null and rucProveedor != ''">
+            AND cr.RUC_PROVEEDOR LIKE '%' || #{rucProveedor} || '%'
+        </if>
+        ORDER BY cr.FECHA_DOC DESC;
+    </select>
+
+</mapper>

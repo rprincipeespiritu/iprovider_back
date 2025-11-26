@@ -1,0 +1,355 @@
+<excel>
+
+    <header>
+        <title>Año</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>anno</id>
+        <ancho>30</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>RUC</title>
+        <fondoColor01>255</fondoColor01>
+        <fondoColor02>217</fondoColor02>
+        <fondoColor03>102</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>ruc</id>
+        <ancho>30</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Razón Social</title>
+        <fondoColor01>255</fondoColor01>
+        <fondoColor02>217</fondoColor02>
+        <fondoColor03>102</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>ruc</id>
+        <ancho>80</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Ene - Partic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>participacion</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Ene - Adjudic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>adjudicados</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Feb - Partic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>participacion</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Feb - Adjudic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>adjudicados</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Mar - Partic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>participacion</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Mar - Adjudic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>adjudicados</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Abr - Partic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>participacion</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Abr - Adjudic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>adjudicados</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>May - Partic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>participacion</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>May - Adjudic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>adjudicados</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Jun - Partic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>participacion</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Jun - Adjudic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>adjudicados</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Jul - Partic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>participacion</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Jul - Adjudic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>adjudicados</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Ago - Partic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>participacion</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Ago - Adjudic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>adjudicados</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Set - Partic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>participacion</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Set - Adjudic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>adjudicados</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Oct - Partic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>participacion</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Oct - Adjudic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>adjudicados</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Nov - Partic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>participacion</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Nov - Adjudic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>adjudicados</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Dic - Partic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>participacion</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+    <header>
+        <title>Dic - Adjudic.</title>
+        <fondoColor01>245</fondoColor01>
+        <fondoColor02>246</fondoColor02>
+        <fondoColor03>247</fondoColor03>
+        <letraColor01>0</letraColor01>
+        <letraColor02>0</letraColor02>
+        <letraColor03>0</letraColor03>
+        <id>adjudicados</id>
+        <ancho>70</ancho>
+        <comentario></comentario>
+    </header>
+
+
+</excel>

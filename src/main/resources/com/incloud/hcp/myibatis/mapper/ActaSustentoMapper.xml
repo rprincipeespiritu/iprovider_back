@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.ActaSustentoMapper">
+
+
+
+
+	<resultMap id="actaFiltroResultMap" type="com.incloud.hcp.domain.ActaSustento">
+		<id property="idActaSustento" column="ID_ACTA_SUSTENTO"/>
+		<result property="ordenCompra.id" column="ORDEN_COMPRA_ID" />
+		<result property="numeroActaSustento" column="NUMERO_ACTA_SUSTENTO"/>
+		<result property="proveedor.idProveedor" column="PROVEEDOR_ID"/>
+		<result property="fechaRegistro" column="FECHA_REGISTRO"/>
+		<result property="estado" column="ESTADO"/>
+		<result property="codigoSapEm" column="CODIGO_SAP_EM"/>
+		<result property="codigoSapHes" column="CODIGO_SAP_HES"/>
+		<result property="anioActaSustento" column="ANIO_ACTA_SUSTENTO"/>
+
+	</resultMap>
+
+
+	<resultMap id="actaFiltroProveedorResultMap" type="com.incloud.hcp.domain.ActaSustento">
+		<id property="idActaSustento" column="ID_ACTA_SUSTENTO"/>
+		<result property="ordenCompra.id" column="ORDEN_COMPRA_ID" />
+		<result property="ordenCompra.numeroOrdenCompra" column="NUMERO_ORDEN_COMPRA" />
+		<result property="numeroActaSustento" column="NUMERO_ACTA_SUSTENTO"/>
+		<result property="proveedor.idProveedor" column="PROVEEDOR_ID"/>
+		<result property="proveedor.razonSocial" column="RAZON_SOCIAL_P"/>
+		<result property="proveedor.email" column="EMAIL_P"/>
+		<result property="fechaRegistro" column="FECHA_REGISTRO"/>
+		<result property="estado" column="ESTADO"/>
+		<result property="codigoSapEm" column="CODIGO_SAP_EM"/>
+		<result property="codigoSapHes" column="CODIGO_SAP_HES"/>
+		<result property="anioActaSustento" column="ANIO_ACTA_SUSTENTO"/>
+
+	</resultMap>
+
+
+	<select id="getListActaSustentoByFiltroPaginado" resultMap="actaFiltroResultMap">
+        SELECT
+        ID_ACTA_SUSTENTO,
+        ORDEN_COMPRA_ID,
+        NUMERO_ACTA_SUSTENTO,
+        PROVEEDOR_ID,
+        FECHA_REGISTRO,
+        ESTADO,
+		CODIGO_SAP_EM,
+		CODIGO_SAP_HES,
+        ANIO_ACTA_SUSTENTO,
+		p.RAZON_SOCIAL
+        FROM ACTA_SUSTENTO A
+		INNER JOIN PROVEEDOR p
+		ON A.PROVEEDOR_ID = p.ID_PROVEEDOR
+
+		WHERE  A.ESTADO = 1
+
+        <if test="numeroActaSustento != null and numeroActaSustento != '' ">
+            AND A.NUMERO_ACTA_SUSTENTO LIKE '%'||#{numeroActaSustento}||'%'
+		</if>
+
+		<if test="annioActa != null and annioActa != '' ">
+			AND A.ANIO_ACTA_SUSTENTO = #{annioActa}
+		</if>
+
+		<if test="idProveedor != null and idProveedor != '' ">
+			AND A.PROVEEDOR_ID = #{idProveedor}
+		</if>
+
+		<if test="nombreProveedor != null and nombreProveedor != '' ">
+			AND p.RAZON_SOCIAL  LIKE '%'||UPPER(#{nombreProveedor})||'%'
+		</if>
+
+
+		ORDER BY A.NUMERO_ACTA_SUSTENTO DESC
+
+		LIMIT #{nroRegistros} OFFSET #{paginaMostrar}
+	</select>
+
+
+	<select id="getListActaSustentoByFiltroPaginadoProveedor" resultMap="actaFiltroProveedorResultMap">
+		SELECT
+		ID_ACTA_SUSTENTO,
+		ORDEN_COMPRA_ID,
+		NUMERO_ACTA_SUSTENTO,
+		PROVEEDOR_ID,
+		A.FECHA_REGISTRO,
+		ESTADO,
+		CODIGO_SAP_EM,
+		CODIGO_SAP_HES,
+		ANIO_ACTA_SUSTENTO,
+		p.RAZON_SOCIAL as RAZON_SOCIAL_P,
+		p.EMAIL as EMAIL_P,
+		OC.NUMERO_ORDEN_COMPRA
+		FROM ACTA_SUSTENTO A
+		INNER JOIN PROVEEDOR p
+		ON A.PROVEEDOR_ID = p.ID_PROVEEDOR
+		INNER JOIN ORDEN_COMPRA OC
+		ON A.ORDEN_COMPRA_ID = OC.ID_ORDEN_COMPRA
+
+		WHERE  A.ESTADO in(2,4,5)
+
+		<if test="numeroActa != null and numeroActa != '' ">
+			AND A.NUMERO_ACTA_SUSTENTO LIKE '%'||#{numeroActa}||'%'
+		</if>
+
+		<if test="annioActa != null and annioActa != '' ">
+			AND A.ANIO_ACTA_SUSTENTO = #{annioActa}
+		</if>
+
+		<if test="idProveedor != null and idProveedor != '' ">
+			AND A.PROVEEDOR_ID = #{idProveedor}
+		</if>
+
+		<if test="nombreProveedor != null and nombreProveedor != '' ">
+
+			AND p.RAZON_SOCIAL LIKE '%'||UPPER(#{nombreProveedor})||'%'
+		</if>
+
+
+		ORDER BY A.NUMERO_ACTA_SUSTENTO DESC
+
+		LIMIT #{nroRegistros} OFFSET #{paginaMostrar}
+	</select>
+
+
+	<select id="getListActaSustentoByFiltroPaginadoProveedorRechazada" resultMap="actaFiltroProveedorResultMap">
+		SELECT
+		ID_ACTA_SUSTENTO,
+		ORDEN_COMPRA_ID,
+		NUMERO_ACTA_SUSTENTO,
+		PROVEEDOR_ID,
+		FECHA_REGISTRO,
+		ESTADO,
+		CODIGO_SAP_EM,
+		CODIGO_SAP_HES,
+		ANIO_ACTA_SUSTENTO,
+		p.RAZON_SOCIAL as RAZON_SOCIAL_P,
+		p.EMAIL as EMAIL_P
+		FROM ACTA_SUSTENTO A
+		INNER JOIN PROVEEDOR p
+		ON A.PROVEEDOR_ID = p.ID_PROVEEDOR
+
+		WHERE  A.ESTADO in(3)
+
+		<if test="numeroActaSustento != null and numeroActaSustento != '' ">
+			AND A.NUMERO_ACTA_SUSTENTO = #{numeroActaSustento}
+		</if>
+
+		<if test="annioActa != null and annioActa != '' ">
+			AND A.ANIO_ACTA_SUSTENTO = #{annioActa}
+		</if>
+
+		<if test="idProveedor != null and idProveedor != '' ">
+			AND A.PROVEEDOR_ID = #{idProveedor}
+		</if>
+
+		<if test="nombreProveedor != null and nombreProveedor != '' ">
+
+			AND p.RAZON_SOCIAL LIKE '%'||UPPER(#{nombreProveedor})||'%'
+		</if>
+
+
+		ORDER BY A.NUMERO_ACTA_SUSTENTO DESC
+
+		LIMIT #{nroRegistros} OFFSET #{paginaMostrar}
+	</select>
+
+
+</mapper>

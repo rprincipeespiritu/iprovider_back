@@ -1,0 +1,5 @@
+id;acreedorCodigoSap;ruc;telefono;idCondicionPago;idMoneda;idTipoProveedor;email;razonSocial;tipoPersona;direccionFiscal;emailRetencion
+1;1001673;20424205576;;NT90;PEN;1;gcarrillo@material.pe;TGC PUBLICIDAD S.A.C.;J;CAL. LOS FRESNOS NRO. 195 DPTO. 101;
+2;1000130;20541435833;;NT30;USD;1;acastro@zahorysac.com;C&J ZAHORY S.A.C;J;MZ. J LOTE 4 - URB. LAS PRADERAS DE PARIACHI II ETAPA - HUAYCAN - ATE;
+3;1001343;20609730634;;NT90;PEN;1;comercial@cochepaoperaciones.com;COCHEPA OPERACIONES S.A.C.;J;CAL.SAN ANTONIO NRO. 177 A.H 177; 1RA ZONA;
+4;1001521;20612161942;;NT60;PEN;1;administracion@laexperienciabeyond.com;NUDGE GROUP S.A.C.;J;JR. LOS ALAMOS NRO. 378 DPTO. 402A; URB. EL CORTIJO;

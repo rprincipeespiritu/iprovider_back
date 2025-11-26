@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:sac="urn:sunat:names:specification:ubl:peru:schema:xsd:SunatAggregateComponents-1" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 ..\xsd\maindoc\UBLPE-Invoice-2.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ext:UBLExtensions>
+<ext:UBLExtension>
+<ext:ExtensionContent>
+<ds:Signature Id="SF205-311838-220103091343"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><ds:Reference URI=""><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>RW3Vg0RbQUJokEeg4aVjav6KBrw=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue>N5r/r2eh1PF3SMjoBifsRelTMtepM66rPH6GdfS2e2hJZTPTQlcktbh0bLZKaCcV3LUJxyTClXq6
+FZTAuV1bl+rZFkw0svxfj8Vms1d9BLVaDZXibCsyc/oGjktUJBf8eaLAF+qAIHdIpn19bZOpfWU9
+KfG05wKW7MpelS6dQdY6pQx9uILQh23lE50LXGLp5Ec7cke15NFsAfQZHZGA3AZEjK8B0oD41KYB
+KadUoFrKYsPeEHFetAhB2mR5I7VBNtZKonRA9TwK2guR5gUgyOyVHy6UuaM+h1Sfs93AuXiCZy9M
+0mIgGPNQ88A0eeBGCHc3B0lMmk6hCYEu5/m8cg==</ds:SignatureValue><ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIJOjCCByKgAwIBAgIJJ379X5zqZJO4MA0GCSqGSIb3DQEBCwUAMIIBIjELMAkGA1UEBhMCUEUx
+DTALBgNVBAgMBExJTUExDTALBgNVBAcMBExJTUExPTA7BgNVBAsMNHNlZSBjdXJyZW50IGFkZHJl
+c3MgYXQgd3d3LmNhbWVyZmlybWEuY29tLnBlL2FkZHJlc3MxMDAuBgNVBAsMJ0FDIENBTUVSRklS
+TUEgUEVSw5ogQ0VSVElGSUNBRE9TIC0gMjAxNjEUMBIGA1UEBRMLMjA1NjYzMDI0NDcxGjAYBgNV
+BGEMEU5UUlBFLTIwNTY2MzAyNDQ3MSAwHgYDVQQKDBdDQU1FUkZJUk1BIFBFUsOaIFMuQS5DLjEw
+MC4GA1UEAwwnQUMgQ0FNRVJGSVJNQSBQRVLDmiBDRVJUSUZJQ0FET1MgLSAyMDE2MB4XDTIxMDIw
+MzIxMTIzMFoXDTIzMDIwMzIxMTIzMFowggFqMSIwIAYJKoZIhvcNAQkBFhNodWdvLm1vcmVub0Bk
+aGwuY29tMSMwIQYDVQQDDBpIVUdPIEpPU1VFIE1PUkVOTyBFU0NVREVSTzETMBEGA1UEKgwKSFVH
+TyBKT1NVRTEYMBYGA1UEBAwPTU9SRU5PIEVTQ1VERVJPMRUwEwYDVQQFEwxETkk6NDAxNjAyMzUx
+DzANBgNVBAcMBkNBTExBTzEYMBYGA1UECAwPQ0FMTEFPIC0gQ0FMTEFPMRwwGgYDVQQMDBNHRVJF
+TlRFIERFIFNJU1RFTUFTMR0wGwYDVQQLDBRHRVJFTkNJQSBERSBTSVNURU1BUzErMCkGA1UECwwi
+SXNzdWVkIGJ5IFNBTE1PTiBDT1JQIFMuQS5DLiBbUEUxXTEUMBIGA1UEYQwLMjAxMDExMjg3Nzcx
+ITAfBgNVBAoMGERITCBFWFBSRVNTIFBFUsOaIFMuQS5DLjELMAkGA1UEBhMCUEUwggEiMA0GCSqG
+SIb3DQEBAQUAA4IBDwAwggEKAoIBAQDN2/U83v6s9hkXvHms6a3j1yvzx2P1dxJUW7wPCP8leHUY
+IiUs3Px5H4zmra5sOs8mnG3b7jW/9bdA8DHnfCSvr6kN6KOy25A5AfLt3jHy4eXMuaCpUsuYImCq
+Ml5l5Ws9dS4aJ3x5aK2qLwnbu0K9D75Wn01/q3javqa1xjKv3DeP4LK9M/pBoabYsyEAtwC5a6Hk
+JQzOleReNn/DgF1wYhK5L0g0Fq7aBgI89YyL5VDdJ8+yPK7hGufg9iccRwR/HQkkzOKez4UaE+2Y
+cxNMXiOSEvLMw3BZPEdgLiv/UawVXSi4zHtHGLGuPfHppwecgvGFIdpM3lfQnpCz12dnAgMBAAGj
+ggMlMIIDITAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIGwDAdBgNVHSUEFjAUBggrBgEFBQcD
+AgYIKwYBBQUHAwQwHQYDVR0OBBYEFPXjoQEyrviPqOrtxRq+KOtQrVbvMIGNBggrBgEFBQcBAQSB
+gDB+MFQGCCsGAQUFBzAChkhodHRwOi8vd3d3LmNhbWVyZmlybWEuY29tL2NlcnRzL2FjX2NhbWVy
+ZmlybWFfcGVydV9jZXJ0aWZpY2Fkb3MtMjAxNi5jcnQwJgYIKwYBBQUHMAGGGmh0dHA6Ly9vY3Nw
+LmNhbWVyZmlybWEuY29tMB8GA1UdIwQYMBaAFDpuZRjnVtLk8y3dpXxybf8w4YYnMIGgBgNVHR8E
+gZgwgZUwSKBGoESGQmh0dHA6Ly9jcmwuY2FtZXJmaXJtYS5jb20vYWNfY2FtZXJmaXJtYV9wZXJ1
+X2NlcnRpZmljYWRvcy0yMDE2LmNybDBJoEegRYZDaHR0cDovL2NybDEuY2FtZXJmaXJtYS5jb20v
+YWNfY2FtZXJmaXJtYV9wZXJ1X2NlcnRpZmljYWRvcy0yMDE2LmNybDCBvQYDVR0RBIG1MIGygRNo
+dWdvLm1vcmVub0BkaGwuY29tpIGaMIGXMRowGAYKKwYBBAGBhy4eBwwKSFVHTyBKT1NVRTEWMBQG
+CisGAQQBgYcuHggMBk1PUkVOTzEYMBYGCisGAQQBgYcuHgkMCEVTQ1VERVJPMUcwRQYKKwYBBAGB
+hy4eCgw3Q0VSVElGSUNBRE8gREUgUEVSU09OQSBGSVNJQ0EgQ09OIFZJTkNVTEFDSU9OIEEgRU1Q
+UkVTQTAcBgNVHRIEFTATgRFjYUBjYW1lcmZpcm1hLmNvbTCBkAYDVR0gBIGIMIGFMIGCBgwrBgEE
+AYGHLh4QAAEwcjApBggrBgEFBQcCARYdaHR0cHM6Ly9wb2xpY3kuY2FtZXJmaXJtYS5jb20wRQYI
+KwYBBQUHAgIwOQw3Q0VSVElGSUNBRE8gREUgUEVSU09OQSBGSVNJQ0EgQ09OIFZJTkNVTEFDSU9O
+IEEgRU1QUkVTQTANBgkqhkiG9w0BAQsFAAOCAgEAf5rZeuHvufXMNrQKlD5M+YZKFa20eHH3FYQ/
+YhDg+9Ed1VGZ57dqpRcCwa62k17DTAzTwWANwZXhNRZj30IBDk15c8nvsawk8GqWmlRH/0JXpAYz
+Gp3IhiDCBf4pDIbo6KS9zelHYpCAGpHF4klbcf700W+XO3j4fThyI9ZuZ+h3bNA8QjNfPb4ARjsf
+HsKweMvpNJoax+sCfL09+HpeHxBFR/6y3ZUwvPUw8+2J7kcp8J/dobe0hqRU0N1Zmz1K/kcChJNS
+5lAoF6Si0K1eFosE+YMhohWbxTVTxa0Zfhhnrjh5SD/5WX3+P6ISblwP3ABB7cEWkiTE9wy1OykQ
+s1P3taxVYvuH7WLh3K2Gmda/Vqu/HrBMqO3x9gLVPxGWSayIscKyhf76kJorqaa4wA+kq6yFdFvv
+p5Oyh1uE4QM7tJMgC13wLAEJTh941nsvT2GX0RXxUKnDPUXxb5CBqWroLLdxDa0hrEZlfyJQT643
+GbvB1XcWvxNJyJ5fkHRv6AAsMh1cpLBnrwzdeEM2L4MlT8CRwKdWJx/Qw71JUsWWNZEUj1HqVAkS
+iuFr1sPVUhUua2bS25MOdP+/p0384wQ//uTMVia8vh1wsrUUiEo/RZ/ccJd9ANeLAK5tV1DOgMCf
+WIURf7/ZZ9yNmoQ3geHLvNpnopF1sJ//c2861VE=</ds:X509Certificate></ds:X509Data></ds:KeyInfo></ds:Signature></ext:ExtensionContent>
+</ext:UBLExtension>
+<ext:UBLExtension>
+<ext:ExtensionContent>
+<CustomText>
+    <Text name="CondicionPago"><![CDATA[CRÉDITO]]></Text>
+    <Text name="NroCuota"><![CDATA[001]]></Text>
+    <Text name="Plantilla"><![CDATA[T01-FULL]]></Text>
+    <Text name="Cac"><![CDATA[517-2500]]></Text>
+    <Text name="CentAdmin"><![CDATA[575-4433]]></Text>
+    <Text name="TelfRecep"><![CDATA[.]]></Text>
+    <Text name="CiudadRecep"><![CDATA[SAN JUAN DE LURIGANCHO LIMA]]></Text>
+    <Text name="Cuenta"><![CDATA[952303952]]></Text>
+    <Text name="CorreoCliente"><![CDATA[]]></Text>
+    <Text name="Identificacion"><![CDATA[COD. ID. 2050311838]]></Text>
+    <Text name="Referencia1"><![CDATA[LIMIR00558179]]></Text>
+    <Text name="MsjRetencion"><![CDATA[Incorporado al Régimen de Agentes de Retención de IGV (R.S. 037-2002) a partir del 01/06/2002]]></Text>
+    <Text name="PagWeb"><![CDATA[]]></Text>
+    <Text name="Resolucion"><![CDATA[RI Nro. 0180050001823 /SUNAT]]></Text>
+    <Text name="TipoDoc"><![CDATA[FACTURA ELECTRONICA]]></Text>
+    <Text name="ValorAWB"><![CDATA[8996321036]]></Text>
+    <Section name="Detalle">
+        <Detail>
+            <Value><![CDATA[1]]></Value>
+            <Value><![CDATA[23/12/2021]]></Value>
+            <Value><![CDATA[8996321036]]></Value>
+            <Value><![CDATA[FLR/LIM]]></Value>
+            <Value><![CDATA[1]]></Value>
+            <Value><![CDATA[107.50]]></Value>
+            <Value><![CDATA[Repes Vol]]></Value>
+            <Value><![CDATA[NON DOC]]></Value>
+            <Value><![CDATA[SERVICIO INTEGRAL DE ENVIO ENTREGA RAPIDA (INBOUND)]]></Value>
+            <Value><![CDATA[12MDE12210070  / Ref: TOPY TOP SA]]></Value>
+            <Value><![CDATA[ALBINI&PITIGLIANI S.P.A. Gene O'Sullivan VIA LEONARDO DA VINCI, 17 50013 CAPALLE , CAMPI BISENZIO (FI) CAMPI BISENZIO ITALY]]></Value>
+            <Value><![CDATA[TOPY TOP S A Yovanna De La Cruz AV. SANTUARIO NRO 1323 SAN JUAN DE LURIGANCHO LIMA PERU]]></Value>
+            <Value><![CDATA[]]></Value>
+            <Value><![CDATA[Flete Inbound]]></Value>
+            <Value><![CDATA[910.73]]></Value>
+            <Value><![CDATA[Fuel Surcharge]]></Value>
+            <Value><![CDATA[121.17]]></Value>
+            <Value><![CDATA[Seguro Nondoc]]></Value>
+            <Value><![CDATA[69.09]]></Value>
+            <Value><![CDATA[Pieza Sobrepeso]]></Value>
+            <Value><![CDATA[99.00]]></Value>
+            <Value><![CDATA[Situacion Emergenc]]></Value>
+            <Value><![CDATA[21.50]]></Value>
+            <Value><![CDATA[TOTAL AWB]]></Value>
+            <Value><![CDATA[1221.49]]></Value>
+            <Value><![CDATA[]]></Value>
+        </Detail>
+    </Section>
+    <Section name="MensajesItem">
+        <Detail>
+            <Value><![CDATA[Linea1]]></Value>
+            <Value><![CDATA[1]]></Value>
+            <Value><![CDATA[]]></Value>
+        </Detail>
+        <Detail>
+            <Value><![CDATA[Linea2]]></Value>
+            <Value><![CDATA[107.50]]></Value>
+            <Value><![CDATA[]]></Value>
+        </Detail>
+        <Detail>
+            <Value><![CDATA[Linea3]]></Value>
+            <Value><![CDATA[1]]></Value>
+            <Value><![CDATA[]]></Value>
+        </Detail>
+        <Detail>
+            <Value><![CDATA[Linea4]]></Value>
+            <Value><![CDATA[]]></Value>
+            <Value><![CDATA[]]></Value>
+        </Detail>
+        <Detail>
+            <Value><![CDATA[Linea5]]></Value>
+            <Value><![CDATA[]]></Value>
+            <Value><![CDATA[]]></Value>
+        </Detail>
+        <Detail>
+            <Value><![CDATA[Linea6]]></Value>
+            <Value><![CDATA[]]></Value>
+            <Value><![CDATA[]]></Value>
+        </Detail>
+        <Detail>
+            <Value><![CDATA[Linea7]]></Value>
+            <Value><![CDATA[]]></Value>
+            <Value><![CDATA[]]></Value>
+        </Detail>
+    </Section>
+    <Section name="MensajesDt">
+        <Detail>
+            <Value><![CDATA[1]]></Value>
+            <Value><![CDATA[Importante:]]></Value>
+            <Value><![CDATA[]]></Value>
+        </Detail>
+        <Detail>
+            <Value><![CDATA[2]]></Value>
+            <Value><![CDATA[1.- Realizar sus pagos a nuestras cuentas corrientes del Banco Crédito M/N: 193-1630160-0-62 CCI: 002 193 001630160062 19.]]></Value>
+            <Value><![CDATA[]]></Value>
+        </Detail>
+        <Detail>
+            <Value><![CDATA[3]]></Value>
+            <Value><![CDATA[2.- Enviar Voucher o Transferencia a cobranzaperu@dhl.com, adjuntando el detalle de las facturas que está cancelando.]]></Value>
+            <Value><![CDATA[]]></Value>
+        </Detail>
+        <Detail>
+            <Value><![CDATA[4]]></Value>
+            <Value><![CDATA[3.- En caso que se emita Cheques para sus pagos, dicho título valor debe ser emitido a la Razon Social: DHL EXPRESS PERU SAC.]]></Value>
+            <Value><![CDATA[]]></Value>
+        </Detail>
+        <Detail>
+            <Value><![CDATA[5]]></Value>
+            <Value><![CDATA[4. También puede realizar sus abonos en nuestra cuenta BBVA indicando: Etiqueta de cuenta: DHL EXPRESS CREDITO; Abonos Soles: Convenio 1109; Código de Pago: (Ver COD. ID que está al lado izquierdo del código de barra).]]></Value>
+            <Value><![CDATA[]]></Value>
+        </Detail>
+        <Detail>
+            <Value><![CDATA[6]]></Value>
+            <Value><![CDATA[5.- Si tiene alguna consulta post facturación para sus comprobantes con serie B205 – F205 – B300 – F300 – B301– F301 –B362 – F362 por favor contactarse al correo queryhandling.pe@dhl.com  o a la línea 517-0500]]></Value>
+            <Value><![CDATA[]]></Value>
+        </Detail>
+    </Section>
+</CustomText>
+</ext:ExtensionContent>
+</ext:UBLExtension>
+</ext:UBLExtensions>
+<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+<cbc:CustomizationID>2.0</cbc:CustomizationID>
+<cbc:ID>F205-311838</cbc:ID>
+<cbc:IssueDate>2022-01-03</cbc:IssueDate>
+<cbc:DueDate>2022-02-02</cbc:DueDate>
+<cbc:InvoiceTypeCode listID="0101">01</cbc:InvoiceTypeCode>
+<cbc:Note languageLocaleID="1000"><![CDATA[UNO MIL CUATROCIENTOS CUARENTA Y UNO CON 36/100 DOLARES AMERICANOS]]></cbc:Note>
+<cbc:DocumentCurrencyCode>USD</cbc:DocumentCurrencyCode>
+<cac:Signature>
+<cbc:ID>SF205-311838</cbc:ID>
+<cac:SignatoryParty>
+<cac:PartyIdentification>
+<cbc:ID>20600406788</cbc:ID>
+</cac:PartyIdentification>
+<cac:PartyName>
+<cbc:Name><![CDATA[SUNAT]]></cbc:Name>
+</cac:PartyName>
+</cac:SignatoryParty>
+<cac:DigitalSignatureAttachment>
+<cac:ExternalReference>
+<cbc:URI>SF205-311838-220103091343</cbc:URI>
+</cac:ExternalReference>
+</cac:DigitalSignatureAttachment>
+</cac:Signature>
+<cac:AccountingSupplierParty>
+<cac:Party>
+<cac:PartyIdentification>
+<cbc:ID schemeID="6">20600406788</cbc:ID>
+</cac:PartyIdentification>
+<cac:PartyName>
+<cbc:Name><![CDATA[DHL EXPRESS PERU SAC]]></cbc:Name>
+</cac:PartyName>
+<cac:PartyLegalEntity>
+<cbc:RegistrationName><![CDATA[DHL EXPRESS PERU SAC]]></cbc:RegistrationName>
+<cac:RegistrationAddress>
+<cbc:ID><![CDATA[070101]]></cbc:ID>
+<cbc:AddressTypeCode>0020</cbc:AddressTypeCode>
+<cbc:CitySubdivisionName><![CDATA[NO APLICA]]></cbc:CitySubdivisionName>
+<cbc:CityName><![CDATA[CALLAO]]></cbc:CityName>
+<cbc:CountrySubentity><![CDATA[CALLAO]]></cbc:CountrySubentity>
+<cbc:District><![CDATA[CALLAO]]></cbc:District>
+<cac:AddressLine>
+<cbc:Line><![CDATA[CAL.1 MZA. A LOTE. 06 U. IND BOCANEGRA (HABILITACION INDUSTRIAL FUNDO BOCANEGRA) PROV. CONST. DEL CA]]></cbc:Line>
+</cac:AddressLine>
+<cac:Country>
+<cbc:IdentificationCode>PE</cbc:IdentificationCode>
+</cac:Country>
+</cac:RegistrationAddress>
+</cac:PartyLegalEntity>
+</cac:Party>
+</cac:AccountingSupplierParty>
+<cac:AccountingCustomerParty>
+<cac:Party>
+<cac:PartyIdentification>
+<cbc:ID schemeID="6">20100047056</cbc:ID>
+</cac:PartyIdentification>
+<cac:PostalAddress>
+<cbc:District><![CDATA[]]></cbc:District>
+<cac:AddressLine>
+<cbc:Line><![CDATA[AV SANTUARIO NRO 1323 URB ZARATE (1323 132]]></cbc:Line>
+</cac:AddressLine>
+<cac:Country>
+<cbc:IdentificationCode>PE</cbc:IdentificationCode>
+</cac:Country>
+</cac:PostalAddress>
+<cac:PartyLegalEntity>
+<cbc:RegistrationName><![CDATA[TOPY TOP S A]]></cbc:RegistrationName>
+<cac:RegistrationAddress>
+<cbc:ID><![CDATA[]]></cbc:ID>
+<cac:AddressLine>
+<cbc:Line><![CDATA[AV SANTUARIO NRO 1323 URB ZARATE (1323 132]]></cbc:Line>
+</cac:AddressLine>
+<cac:Country>
+<cbc:IdentificationCode>PE</cbc:IdentificationCode>
+</cac:Country>
+</cac:RegistrationAddress>
+</cac:PartyLegalEntity>
+</cac:Party>
+</cac:AccountingCustomerParty>
+<cac:BuyerCustomerParty>
+<cac:Party>
+<cac:PartyIdentification>
+<cbc:ID schemeID="6">20100047056</cbc:ID>
+</cac:PartyIdentification>
+</cac:Party>
+</cac:BuyerCustomerParty>
+<cac:PaymentTerms>
+<cbc:ID>FormaPago</cbc:ID>
+<cbc:PaymentMeansID>Credito</cbc:PaymentMeansID>
+<cbc:Amount currencyID="USD">1441.36</cbc:Amount>
+</cac:PaymentTerms>
+<cac:PaymentTerms>
+<cbc:ID>FormaPago</cbc:ID>
+<cbc:PaymentMeansID>Cuota001</cbc:PaymentMeansID>
+<cbc:Amount currencyID="USD">1441.36</cbc:Amount>
+<cbc:PaymentDueDate>2022-02-02</cbc:PaymentDueDate>
+</cac:PaymentTerms>
+<cac:TaxTotal>
+<cbc:TaxAmount currencyID="USD">219.87</cbc:TaxAmount>
+<cac:TaxSubtotal>
+<cbc:TaxableAmount currencyID="USD">1221.49</cbc:TaxableAmount>
+<cbc:TaxAmount currencyID="USD">219.87</cbc:TaxAmount>
+<cac:TaxCategory>
+<cac:TaxScheme>
+<cbc:ID>1000</cbc:ID>
+<cbc:Name>IGV</cbc:Name>
+<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+</cac:TaxScheme>
+</cac:TaxCategory>
+</cac:TaxSubtotal>
+</cac:TaxTotal>
+<cac:LegalMonetaryTotal>
+<cbc:LineExtensionAmount currencyID="USD">1221.49</cbc:LineExtensionAmount>
+<cbc:TaxExclusiveAmount currencyID="USD">219.87</cbc:TaxExclusiveAmount>
+<cbc:TaxInclusiveAmount currencyID="USD">1441.36</cbc:TaxInclusiveAmount>
+<cbc:PayableAmount currencyID="USD">1441.36</cbc:PayableAmount>
+</cac:LegalMonetaryTotal>
+<cac:InvoiceLine>
+<cbc:ID>1</cbc:ID>
+<cbc:InvoicedQuantity unitCode="EA">1.00</cbc:InvoicedQuantity>
+<cbc:LineExtensionAmount currencyID="USD">1221.49</cbc:LineExtensionAmount>
+<cac:PricingReference>
+<cac:AlternativeConditionPrice>
+<cbc:PriceAmount currencyID="USD">1441.36</cbc:PriceAmount>
+<cbc:PriceTypeCode>01</cbc:PriceTypeCode>
+</cac:AlternativeConditionPrice>
+</cac:PricingReference>
+<cac:TaxTotal>
+<cbc:TaxAmount currencyID="USD">219.87</cbc:TaxAmount>
+<cac:TaxSubtotal>
+<cbc:TaxableAmount currencyID="USD">1221.49</cbc:TaxableAmount>
+<cbc:TaxAmount currencyID="USD">219.87</cbc:TaxAmount>
+<cac:TaxCategory>
+<cbc:ID>S</cbc:ID>
+<cbc:Percent>18.00</cbc:Percent>
+<cbc:TaxExemptionReasonCode>10</cbc:TaxExemptionReasonCode>
+<cac:TaxScheme>
+<cbc:ID>1000</cbc:ID>
+<cbc:Name>IGV</cbc:Name>
+<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+</cac:TaxScheme>
+</cac:TaxCategory>
+</cac:TaxSubtotal>
+</cac:TaxTotal>
+<cac:Item>
+<cbc:Description><![CDATA[SERVICIO INTEGRAL DE ENVIO ENTREGA RAPIDA (INBOUND)]]></cbc:Description>
+<cbc:Description><![CDATA[0.00]]></cbc:Description>
+<cbc:Description><![CDATA[1221.49]]></cbc:Description>
+<cac:SellersItemIdentification>
+<cbc:ID>I</cbc:ID>
+</cac:SellersItemIdentification>
+<cac:CommodityClassification>
+<cbc:ItemClassificationCode>78102200</cbc:ItemClassificationCode>
+</cac:CommodityClassification>
+</cac:Item>
+<cac:Price>
+<cbc:PriceAmount currencyID="USD">1221.49</cbc:PriceAmount>
+</cac:Price>
+</cac:InvoiceLine>
+</Invoice>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="retencion-20" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1cc1ac47-7147-44de-beb9-ae5e6d4d4a1a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<subDataset name="Dataset1" uuid="d304a71f-0361-4fd1-9170-747ee2e4e633">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="valor" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="razonSocial" class="java.lang.String"/>
+	<parameter name="nroConstancia" class="java.lang.Integer"/>
+	<parameter name="fechaDoc" class="java.lang.String"/>
+	<parameter name="tipoDocProveedor" class="java.lang.String"/>
+	<parameter name="nroDocProveedor" class="java.lang.String"/>
+	<parameter name="codigoOperacion" class="java.lang.String"/>
+	<parameter name="nombreOperacion" class="java.lang.String"/>
+	<parameter name="codigoBienServ" class="java.lang.String"/>
+	<parameter name="nombreBienServ" class="java.lang.String"/>
+	<parameter name="montoDeposito" class="java.lang.Double"/>
+	<parameter name="periodoTributario" class="java.lang.String"/>
+	<parameter name="tipoComprobante" class="java.lang.String"/>
+	<parameter name="nroComprobante" class="java.lang.String"/>
+	<background>
+		<band height="719" splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="143" splitType="Stretch">
+			<rectangle radius="12">
+				<reportElement stretchType="RelativeToBandHeight" x="180" y="30" width="185" height="91" forecolor="#585858" uuid="b38c2fcf-576c-4a0b-a5aa-00aa83574dc5"/>
+				<graphicElement>
+					<pen lineWidth="0.7" lineStyle="Solid"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="180" y="60" width="185" height="50" forecolor="#000000" uuid="94a6a053-2bef-4bb5-8d03-313fcb34e823">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.x" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="16" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[COMPROBANTE DE DETRACCIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="80" height="20" uuid="8d8e6fdc-a298-4fc1-b2e4-6fd807416684"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<text><![CDATA[Fecha de documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="0" width="11" height="11" forecolor="#000000" uuid="257b7620-0e68-44b1-9fc5-afe219844f76"/>
+				<textElement>
+					<font fontName="SansSerif" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="490" y="0" width="60" height="20" uuid="1647cbe1-6f75-491d-bf78-ad00bfbe3246"/>
+				<textElement>
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fechaDoc}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="412" splitType="Stretch">
+			<staticText>
+				<reportElement x="45" y="5" width="90" height="14" forecolor="#000000" uuid="7f9242d2-7d9e-4ea0-bf01-e4d65f9b943d"/>
+				<textElement>
+					<font fontName="SansSerif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Numero Constancia]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="255" y="4" width="120" height="15" uuid="aa3aa543-768e-446f-9fa0-7906efb5d10d"/>
+				<textElement>
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nroConstancia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="45" y="85" width="160" height="30" forecolor="#000000" uuid="a1730e77-82ed-42fd-bada-ae2891bce462"/>
+				<textElement>
+					<font fontName="SansSerif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre/Razón Social del proveedor]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="255" y="85" width="260" height="30" uuid="3af8fd4f-2688-41cf-b1d4-d3378f5e763d"/>
+				<textElement>
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{razonSocial}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="45" y="25" width="140" height="16" forecolor="#000000" uuid="e9e8f83e-ab18-433b-951c-ef623024caf7"/>
+				<textElement>
+					<font fontName="SansSerif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo Documento del Proveedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="51" width="160" height="20" forecolor="#000000" uuid="7559b3bc-e8fb-4b50-9379-46321a0c8841"/>
+				<textElement>
+					<font fontName="SansSerif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número Documento del Proveedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="125" width="90" height="20" forecolor="#000000" uuid="9adb0f7c-a8fc-4ffc-beca-d165100b8d61"/>
+				<textElement>
+					<font fontName="SansSerif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código  operación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="155" width="90" height="20" forecolor="#000000" uuid="9a0d93d7-9f58-44b9-8617-67a8388816a8"/>
+				<textElement>
+					<font fontName="SansSerif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre operación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="190" width="110" height="20" forecolor="#000000" uuid="58e87c34-c315-454b-8bb9-19f406a9af7a"/>
+				<textElement>
+					<font fontName="SansSerif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código bien o servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="220" width="110" height="20" forecolor="#000000" uuid="2fedc230-5ff2-49dc-9fdc-506e4745b372"/>
+				<textElement>
+					<font fontName="SansSerif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre bien o servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="260" width="80" height="20" forecolor="#000000" uuid="fbcd3e5e-b44a-47c7-a064-ff9a0351e034"/>
+				<textElement>
+					<font fontName="SansSerif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Monto depósito]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="290" width="90" height="20" forecolor="#000000" uuid="5f90929d-4fc4-464d-ae87-c77c39a1b18c"/>
+				<textElement>
+					<font fontName="SansSerif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Periodo Tributario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="320" width="110" height="20" forecolor="#000000" uuid="85a92b9a-4dde-4986-b308-dd1900cd7d94"/>
+				<textElement>
+					<font fontName="SansSerif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Comprobante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="360" width="130" height="20" forecolor="#000000" uuid="ae92a0b3-67f2-4472-a5a2-4ca23b894928"/>
+				<textElement>
+					<font fontName="SansSerif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número de Comprobante]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="255" y="25" width="200" height="20" uuid="02eb565c-cc96-41e1-be62-954ad15dc05c"/>
+				<textElement>
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tipoDocProveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="55" width="160" height="16" uuid="209d4714-9183-4399-8d06-194880adb132"/>
+				<textElement>
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nroDocProveedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="125" width="100" height="20" uuid="3459c620-e24d-44cf-a7cd-7d85f5b496b9"/>
+				<textElement>
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codigoOperacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="155" width="225" height="20" uuid="c41ce843-557a-4c6c-999e-5241c8bdd70d"/>
+				<textElement>
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombreOperacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="190" width="100" height="20" uuid="7a1f3d9c-8ef1-4fda-8ddc-4b009054629d"/>
+				<textElement>
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codigoBienServ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="220" width="225" height="20" uuid="98b8cb19-9149-4be3-8811-24050272907f"/>
+				<textElement>
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombreBienServ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="260" width="100" height="20" uuid="e87a4081-63a2-4b61-859d-6325ed3d4946"/>
+				<textElement>
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{montoDeposito}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="290" width="130" height="20" uuid="70401cd6-c964-43a3-8528-0debc9c88c68"/>
+				<textElement>
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{periodoTributario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="320" width="150" height="20" uuid="defe34cc-3ee2-480b-aa81-c44b16700cf8"/>
+				<textElement>
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tipoComprobante}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="360" width="130" height="20" uuid="3338fce2-710c-4837-9da9-7c495d382b44"/>
+				<textElement>
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nroComprobante}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

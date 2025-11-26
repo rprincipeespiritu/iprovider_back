@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.LineaComercialMapper">
+
+    <resultMap id="lineaComercialResultMap" type="com.incloud.hcp.bean.LineaFamilia">
+        <id property="id" column="id_linea_comercial"/>
+        <result property="descripcion" column="descripcion"/>
+    </resultMap>
+
+	<resultMap id="lineaComercialDtoExcelResultMap" type="com.incloud.hcp.dto.reporte.LineaComercialDtoExcel">
+		<result property="codigoSap" column="codigo_sap"/>
+		<result property="ruc" column="ruc"/>
+		<result property="razonSocial" column="razon_social"/>
+		<result property="lineaComercial" column="linea"/>
+		<result property="familia" column="familia"/>
+		<result property="subFamilia" column="subfamilia"/>
+		<result property="otraFamilia" column="otros_linea_comercial"/>
+	</resultMap>
+
+	<select id="getListFamiliaByIDs" resultMap="lineaComercialResultMap">
+		SELECT
+		id_linea_comercial,
+		descripcion
+		FROM linea_comercial lc
+		WHERE lc.id_padre IN
+		<foreach item="item" index="index" collection="ids"
+				 open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+
+	<select id="getIdSequence" resultType="Integer">
+		SELECT cast(COALESCE(MAX(ID_PROVEEDOR_LINEA_COMERCIAL), 0) as integer) + 1 as idProveedorLineaComercial
+		FROM PROVEEDOR_LINEA_COMERCIAL plc
+	</select>
+
+	<insert id="getCrearLineaComercial" parameterType="com.incloud.hcp.dto.LineaComercialInDto">
+		INSERT INTO PROVEEDOR_LINEA_COMERCIAL(
+			id_proveedor_linea_comercial,
+			id_familia ,
+			id_linea_comercial ,
+			id_proveedor ,
+			id_subfamilia ,
+			otros_linea_comercial
+		)
+		VALUES(
+				  (select cast(COALESCE(MAX(id_proveedor_linea_comercial), 0) as integer) + 1 as newId
+				   from PROVEEDOR_LINEA_COMERCIAL) ,
+				  #{familia},
+				  #{lineaComercial},
+				  #{proveedor},
+				  #{subFamilia},
+				  #{otrosLineaComercial}
+			  )
+	</insert>
+
+	<update id="updateLineaComercial">
+		UPDATE PROVEEDOR_LINEA_COMERCIAL SET ID_FAMILIA = #{familia}, ID_LINEA_COMERCIAL = #{lineaComercial},
+		OTROS_LINEA_COMERCIAL = #{otrosLineaComercial} WHERE ID_PROVEEDOR_LINEA_COMERCIAL = #{idProveedorLineaComercial}
+	</update>
+
+	<select id="getListAllLineasComercialesProveedor" resultMap="lineaComercialDtoExcelResultMap">
+		SELECT
+			pv.acreedor_codigo_sap AS codigo_sap,
+			pv.ruc,
+			pv.razon_social,
+			linea.descripcion AS linea,
+			(
+				SELECT
+					lc.descripcion
+				FROM
+					LINEA_COMERCIAL lc
+				WHERE
+					lc.ID_LINEA_COMERCIAL = plc.ID_FAMILIA) AS familia,
+			(
+				SELECT
+					lc.descripcion
+				FROM
+					LINEA_COMERCIAL lc
+				WHERE
+					lc.ID_LINEA_COMERCIAL = plc.ID_FAMILIA) AS subfamilia,
+			plc.otros_linea_comercial
+		FROM
+			PROVEEDOR_LINEA_COMERCIAL plc
+				INNER JOIN PROVEEDOR pv ON
+				plc.id_proveedor = pv.id_proveedor
+				INNER JOIN LINEA_COMERCIAL linea ON
+				plc.id_linea_comercial = linea.id_linea_comercial
+		ORDER BY
+			pv.razon_social;
+	</select>
+
+</mapper>

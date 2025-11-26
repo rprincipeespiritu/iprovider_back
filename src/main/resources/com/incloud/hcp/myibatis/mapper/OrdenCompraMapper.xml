@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.OrdenCompraMapper">
+
+
+
+
+	<resultMap id="filtroResultMap" type="com.incloud.hcp.domain.OrdenCompra">
+
+		<result property="id" column="id" />
+		<result property="tipoOrdenCompra.descripcion" column="descripcion"/>
+		<result property="estadoOrdenCompra.descripcion" column="estado_descripcion"/>
+
+	</resultMap>
+
+
+	<select id="getListByFiltroOrdenCompra" resultMap="filtroResultMap">
+
+		SELECT
+		oc.ID_ORDEN_COMPRA as id,
+		oc.AUTORIZADOR_FECHA_LIBERACION as autorizadorFechaLiberacion,
+		oc.CLASE_ORDEN_COMPRA as claseOrdenCompra,
+		oc.CODIGO_CLASE_ORDEN_COMPRA as codigoClaseOrdenCompra,
+		oc.CODIGO_MONEDA as codigoMondeda,
+		oc.COMPRADOR_NOMBRE as compradorNombre,
+		oc.COMPRADOR_USUARIO_SAP as compradorUsuarioSap,
+		oc.CONDICION_PAGO as condicionPago,
+		oc.CONDICION_PAGO_DESC as condicionPagoDescripcion,
+		oc.DCTO as dcto,
+		oc.ESTADO_SAP as estadoSap,
+		oc.FECHA_APROBACION as fechaAprobacion,
+		oc.FECHA_ENTREGA as fechaEntrega,
+		oc.FECHA_MODIFICACION as fechaModificacion,
+		oc.FECHA_PUBLICACION as fechaPublicacion,
+		oc.FECHA_REGISTRO as fechaRegistro,
+		oc.FECHA_VISUALIZACION as fechaVisualizacion,
+		oc.HORA_MODIFICACION as horaModificacion,
+		oc.ID_AGENDA_DIRECCION as idAgendaDireccion,
+		oc.ID_AGENDA_DIRECCION2 as idAgendaDireccion2,
+		oc.ID_EMPRESA as idEmpresa,
+		oc.ID_ESTADO_ORDEN_COMPRA as idEstadoOrdenCompra,
+		oc.ID_PAGO as idPago,
+		oc.ID_TIPO_ORDEN_COMPRA as idTipoOrdenCompra,
+		oc.IMPUESTOS as impuesto,
+		oc.INDICADOR_CONTRATO_MARCO as indicadorContratoMarco,
+		oc.IS_ACTIVE as isActive,
+		oc.LUGAR_ENTREGA as lugarEntrega,
+		oc.MOTIVO_RECHAZO as motivoRechazo,
+		oc.NO_REGISTRO as noRegistro,
+		oc.NOTAS_RECEPCION as notasRecepcion,
+		oc.NUMERO_ORDEN_COMPRA as numeroOrdenCompra,
+		oc.OBSERVACIONES as observaciones,
+		oc.PROVEEDOR_CODIGO_SAP as proveedorCodigoSap,
+		oc.PROVEEDOR_RUC as proveedorRuc,
+		oc.SOCIEDAD as sociedad,
+		oc.SUBTOTAL as subtotal,
+		oc.TOTAL as total,
+		oc.ULTIMO_LIBERADOR_USUARIO_SAP as ultimoLiberadorUsuarioSap,
+		oc.VERSION as version,
+		oc.FECHA_INICIO_CONTRATO as fechaInicioContrato,
+		oc.FECHA_FIN_CONTRATO as fechaFinContrato,
+		oc.TIPO_EXCEPCION as tipoExcepcion,
+		oc.PROVEEDOR_RAZON_SOCIAL  as proveedorRazonSocial,
+		toc.DESCRIPCION as descripcion,
+		oc.VALOR_IMPUESTO as valorImpuesto,
+		eoc.DESCRIPCION AS estado_descripcion,
+		oc.INDICADOR_IMPUESTO as indicadorImpuesto
+		FROM ORDEN_COMPRA  oc
+		INNER JOIN TIPO_ORDEN_COMPRA toc
+		ON oc.ID_TIPO_ORDEN_COMPRA  = toc.ID_TIPO_ORDEN_COMPRA
+		INNER JOIN ESTADO_ORDEN_COMPRA eoc
+		ON oc.ID_ESTADO_ORDEN_COMPRA = eoc.ID_ESTADO_ORDEN_COMPRA
+		<!--where oc.IS_ACTIVE = '1' and oc.ESTADO_SAP in ('1','L','A')-->
+		where oc.IS_ACTIVE = '1' and (oc.ESTADO_SAP in ('1','L','A','05') OR oc.ID_ESTADO_ORDEN_COMPRA IN (3,4))
+		<if test="fechaInicio != null ">
+		AND oc.FECHA_REGISTRO BETWEEN #{fechaInicio} AND #{fechaFin}
+		</if>
+		<if test="nombreProveedor != null and nombreProveedor != '' ">
+			AND UPPER(oc.PROVEEDOR_RAZON_SOCIAL) LIKE '%'||UPPER(#{nombreProveedor})||'%'
+		</if>
+
+		<if test="nroOrdenCompra != null and nroOrdenCompra != '' ">
+			AND oc.NUMERO_ORDEN_COMPRA LIKE '%'||#{nroOrdenCompra}||'%'
+		</if>
+
+		<if test="comprador != null and comprador != '' ">
+			AND UPPER(oc.COMPRADOR_NOMBRE) LIKE '%'||UPPER(#{comprador})||'%'
+		</if>
+
+
+		<if test="ruc != null and ruc != '' ">
+			AND oc.PROVEEDOR_RUC = #{ruc}
+		</if>
+
+		<if test="estado != null and estado != '' ">
+			AND oc.ID_ESTADO_ORDEN_COMPRA in(#{estado})
+		</if>
+
+		<if test="estado == null and estado == 0 ">
+			AND oc.ID_ESTADO_ORDEN_COMPRA in(1,2,3,4,5)
+		</if>
+
+		<if test="tipoOc != null and tipoOc != '' ">
+			AND oc.ID_TIPO_ORDEN_COMPRA in(#{tipoOc})
+		</if>
+
+		<if test="tipoOc == null and tipoOc == 0 ">
+			AND oc.ID_TIPO_ORDEN_COMPRA in(1,2,3)
+		</if>
+
+		ORDER BY oc.FECHA_REGISTRO DESC ;
+	</select>
+
+
+
+
+
+</mapper>

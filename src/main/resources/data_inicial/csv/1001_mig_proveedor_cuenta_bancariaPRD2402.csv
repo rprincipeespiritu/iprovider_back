@@ -1,0 +1,7 @@
+id;claveControlBanco;contacto;indCuentaDetraccion;numeroCuenta;numeroCuentaCci;descripcionBanco;idMoneda;rucProveedor;paisBanco;codigoAcreedorSap
+1;2;;;1.94191E+12;2.194E+17;;USD;;PE;1000764
+2;18;;;3041611;;;PEN;;PE;1000764
+3;2;;;1.9317E+12;2.193E+17;;USD;;PE;1000533
+4;18;;;31074673;;;PEN;;PE;1000533
+5;2;;;1.93187E+12;2.193E+17;;PEN;;PE;1000511
+6;18;;;23010054;;;PEN;;PE;1000511

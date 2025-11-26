@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:cts="urn:carvajal:names:specification:ubl:peru:schema:xsd:CarvajalAggregateComponents-1" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:sac="urn:sunat:names:specification:ubl:peru:schema:xsd:SunatAggregateComponents-1" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ext:UBLExtensions>
+        <ext:UBLExtension>
+            <ext:ExtensionContent>
+                <cts:AdditionalDocumentInformation>
+                    <cts:Header>
+                        <cts:TaxAuthorityResolutionNumber>0180050001117</cts:TaxAuthorityResolutionNumber>
+                        <cts:Printer>IMPEC</cts:Printer>
+                        <cts:Copies>1</cts:Copies>
+                        <cts:IDRecept>20600058119</cts:IDRecept>
+                        <cts:isCancel>0</cts:isCancel>
+                        <cts:PDFTemplate>FA5279</cts:PDFTemplate>
+                        <cts:AdditionalProperty>
+                            <cts:ID>0004</cts:ID>
+                            <cts:Value>Central: 203-3100 / 203-3200</cts:Value>
+                        </cts:AdditionalProperty>
+                        <cts:AdditionalProperty>
+                            <cts:ID>0008</cts:ID>
+                            <cts:Value>AV. VICTOR ANDRES BELAUNDE NRO. 147  INT.101 - LIMA - LIMA - SAN ISIDR</cts:Value>
+                        </cts:AdditionalProperty>
+                        <cts:AdditionalProperty>
+                            <cts:ID>0135</cts:ID>
+                            <cts:Value>AV JAVIER PRADO ESTE  NRO 4350</cts:Value>
+                        </cts:AdditionalProperty>
+                        <cts:AdditionalProperty>
+                            <cts:ID>0002</cts:ID>
+                            <cts:Value>E/S HIPODROMO</cts:Value>
+                        </cts:AdditionalProperty>
+                        <cts:AdditionalProperty>
+                            <cts:ID>0006</cts:ID>
+                            <cts:Value>www.primax.com.pe</cts:Value>
+                        </cts:AdditionalProperty>
+                        <cts:AdditionalProperty>
+                            <cts:ID>0007</cts:ID>
+                            <cts:Value>1009835</cts:Value>
+                        </cts:AdditionalProperty>
+                        <cts:AdditionalProperty>
+                            <cts:ID>0001</cts:ID>
+                            <cts:Value>5000001490</cts:Value>
+                        </cts:AdditionalProperty>
+                        <cts:AdditionalProperty>
+                            <cts:ID>0011</cts:ID>
+                            <cts:Value>0</cts:Value>
+                        </cts:AdditionalProperty>
+                        <cts:AdditionalProperty>
+                            <cts:ID>0055</cts:ID>
+                            <cts:Value>CSC: 0800-10900</cts:Value>
+                        </cts:AdditionalProperty>
+                        <cts:AdditionalProperty>
+                            <cts:ID>0056</cts:ID>
+                            <cts:Value>0800-10910</cts:Value>
+                        </cts:AdditionalProperty>
+                        <cts:AdditionalProperty>
+                            <cts:ID>0057</cts:ID>
+                            <cts:Value>0800-20102</cts:Value>
+                        </cts:AdditionalProperty>
+                        <cts:AdditionalProperty>
+                            <cts:ID>0051</cts:ID>
+                            <cts:Value>20600058119  C21</cts:Value>
+                        </cts:AdditionalProperty>
+                        <cts:AdditionalProperty>
+                            <cts:ID>0058</cts:ID>
+                            <cts:Value>Crédito</cts:Value>
+                        </cts:AdditionalProperty>
+                        <cts:AdditionalProperty>
+                            <cts:ID>0142</cts:ID>
+                            <cts:Value>01:32 PM</cts:Value>
+                        </cts:AdditionalProperty>
+                        <cts:AdditionalProperty>
+                            <cts:ID>0139</cts:ID>
+                            <cts:Value>882639</cts:Value>
+                        </cts:AdditionalProperty>
+                        <cts:AdditionalProperty>
+                            <cts:ID>FDPC</cts:ID>
+                            <cts:Value>1.00</cts:Value>
+                        </cts:AdditionalProperty>
+                    </cts:Header>
+                </cts:AdditionalDocumentInformation>
+            </ext:ExtensionContent>
+        </ext:UBLExtension>
+        <ext:UBLExtension>
+            <ext:ExtensionContent>
+                <Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="SignatureSP">
+                    <SignedInfo>
+                        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+                        <Reference URI="">
+                            <Transforms>
+                                <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                            </Transforms>
+                            <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                            <DigestValue>6sJzENakLF+wXxG1nBM2sbA/yAE=</DigestValue>
+                        </Reference>
+                    </SignedInfo>
+                    <SignatureValue>rcojL3Czrob60T6/YLOgwWvihXUlLLKeJ4mSiPrxGrq79Iafxiu+6qojWIWzUDqQyB/8XC6kbc+4Btzi/pg04oH7YXP+paO/Lg2OBLcXSt73siTaKR8HJTMIhkJf+FU8pohmIvaS0ONcDuRxljV3QzVOwLnThHLWcA/ZbYP7EAxCox7kWNupC4FmNAfQnayTyWzH5wxpL3kpLI9HjphnDUj7Go4UxedwJZvD7A+7llJFLtZML5JW6XUGYyPo59FCCGfLDZM/ydgpvem+MsRZ3YMCSCHLMF2Z4AwQOfnsHiBLkJfi1sYeZQcZiKcmc0yPmduRMiJLk2p8vaDfzZ2acA==</SignatureValue>
+                    <KeyInfo>
+                        <X509Data>
+                            <X509SubjectName>C=PE, L=LIMA, O=COESTI S.A., OU=Validated by Llama.pe ER, OU=FACTURA ELECTRONICA RUC: 20127765279, T=GERENTE GENERAL, SERIALNUMBER=08779867, CN=CALDERON MAVILA ABRAHAM HUGO, E=lkocm@primax.com.pe, STREET=AV. CIRCUNVALACION DEL CLUB GOLF LOS INCAS NRO. 134 TORRE A P</X509SubjectName>
+                            <X509Certificate>MIIFnjCCBIagAwIBAgIIZ9hmRvoiOgMwDQYJKoZIhvcNAQELBQAwRjEkMCIGA1UEAwwbTGxhbWEucGUgU0hBMjU2IFN0YW5kYXJkIENBMREwDwYDVQQKDAhMTEFNQS5QRTELMAkGA1UEBhMCUEUwHhcNMjEwNzA3MTkzMDQ2WhcNMjQwNzA2MTkzMDAwWjCCAUQxRjBEBgNVBAkMPUFWLiBDSVJDVU5WQUxBQ0lPTiBERUwgQ0xVQiBHT0xGIExPUyBJTkNBUyBOUk8uIDEzNCBUT1JSRSBBIFAxIjAgBgkqhkiG9w0BCQEWE2xrb2NtQHByaW1heC5jb20ucGUxJTAjBgNVBAMMHENBTERFUk9OIE1BVklMQSBBQlJBSEFNIEhVR08xETAPBgNVBAUTCDA4Nzc5ODY3MRgwFgYDVQQMDA9HRVJFTlRFIEdFTkVSQUwxLTArBgNVBAsMJEZBQ1RVUkEgRUxFQ1RST05JQ0EgUlVDOiAyMDEyNzc2NTI3OTEhMB8GA1UECwwYVmFsaWRhdGVkIGJ5IExsYW1hLnBlIEVSMRQwEgYDVQQKDAtDT0VTVEkgUy5BLjENMAsGA1UEBwwETElNQTELMAkGA1UEBhMCUEUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDPH4L4hiWFmbu/ig58C11DBHyLZGuDQWZsJ6bfoUbWt0IHlMRFQfz+nU3ufy7DKkOpVmXvv9UCneRZ6CVnYCVRewmyw/fJp7dZNT0DDLqXkb/uH3bLIfpzeB1J7mNj7g49e5oR1mp/IsxJzQxBfV+1MxJdkGOw/pFsCVXw/pYMk5t/f8LgyAY15Tic6EKCMzr756PG0i87n24uzoBEmnIBg97Y6raVGDk4H7SodvNN+5vwD5DBBvmdSyVYX5L+h8SlfwaxyPd9d9MQx2lye4gzzN1EpSqf5JuXDlfHWXgS3R4GNwDnBfWCGHSyQZ6gAfHKNFsbiXHxKGWyTyjw369vAgMBAAGjggGOMIIBijAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFF2IW63rZfv+aKLk2W89V3Ki7yuZMGcGCCsGAQUFBwEBBFswWTA1BggrBgEFBQcwAoYpaHR0cDovL2NydC5sbGFtYS5wZS9sbGFtYXBlc3RhbmRhcmRjYS5jZXIwIAYIKwYBBQUHMAGGFGh0dHA6Ly9vY3NwLmxsYW1hLnBlMB4GA1UdEQQXMBWBE2xrb2NtQHByaW1heC5jb20ucGUwRgYDVR0gBD8wPTA7Bg0rBgEEAYOXdwABAAIBMCowKAYIKwYBBQUHAgEWHGh0dHBzOi8vbGxhbWEucGUvcmVwb3NpdG9yeS8wHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMDoGA1UdHwQzMDEwL6AtoCuGKWh0dHA6Ly9jcmwubGxhbWEucGUvbGxhbWFwZXN0YW5kYXJkY2EuY3JsMB0GA1UdDgQWBBTGH/KluxC4GZ349pX02WIFcCBknjAOBgNVHQ8BAf8EBAMCBsAwDQYJKoZIhvcNAQELBQADggEBAH+GH47PtENhJQEbCVcgRGV7tTrS0rgQnDhGN1NOQYpeGV9TnTuNdOG2KK+c+BqcI5F0SrUcob1mkWF2zp1HNy9FfCj8j75e2inH/fqsRHIMxw+pSzLPV2juC0vA0MzpNCgBr/M9O8djkyM8oPWk6Ya3qE/SEBr6ASsShs2Z+wIyNseFKnFGtP+UPZKtzU9JYToQCRxXUMXO+2FoG+n4qc4uJpEnfMYJHgDi43pR8mmIdvmVE8jJQLlRykDebIZv1j33KGXIUmV6dphDzOTkLC3y1AK1vaTVkoZkKeJBOUc/pPdISued7JSQofwpJ0mzPNl54Ymvnw3szRRPGkMr888=</X509Certificate>
+                        </X509Data>
+                    </KeyInfo>
+                </Signature>
+            </ext:ExtensionContent>
+        </ext:UBLExtension>
+    </ext:UBLExtensions>
+    <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+    <cbc:CustomizationID schemeAgencyName="PE:SUNAT">2.0</cbc:CustomizationID>
+    <cbc:ID>F858-0010967</cbc:ID>
+    <cbc:IssueDate>2021-10-15</cbc:IssueDate>
+    <cbc:IssueTime>01:32:03</cbc:IssueTime>
+    <cbc:DueDate>2021-10-22</cbc:DueDate>
+    <cbc:InvoiceTypeCode listAgencyName="PE:SUNAT" listID="0101" listName="Tipo de Documento" listSchemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo51" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo01" name="Tipo de Operacion">01</cbc:InvoiceTypeCode>
+    <cbc:Note languageLocaleID="1000">DOSCIENTOS OCHENTISEIS Y 34/100 SOLES</cbc:Note>
+    <cbc:DocumentCurrencyCode listAgencyName="United Nations Economic Commission for Europe" listID="ISO 4217 Alpha" listName="Currency">PEN</cbc:DocumentCurrencyCode>
+    <cac:AccountingSupplierParty>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID schemeAgencyName="PE:SUNAT" schemeID="6" schemeName="Documento de Identidad" schemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo06">20127765279</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <cbc:Name>COESTI S.A.</cbc:Name>
+            </cac:PartyName>
+            <cac:PartyLegalEntity>
+                <cbc:RegistrationName>COESTI S.A.</cbc:RegistrationName>
+                <cac:RegistrationAddress>
+                    <cbc:AddressTypeCode listAgencyName="PE:SUNAT" listName="Establecimientos anexos">0000</cbc:AddressTypeCode>
+                    <cac:AddressLine>
+                        <cbc:Line>Av  Circunvalación del Club Golf Los Incas N° 134 Edificio Panorama Torre 1 Piso 18 SANTIAGO DE SURCO LIMA LIMA</cbc:Line>
+                    </cac:AddressLine>
+                    <cac:Country>
+                        <cbc:IdentificationCode listAgencyName="United Nations Economic Commission for Europe" listID="ISO 3166-1" listName="Country">PE</cbc:IdentificationCode>
+                    </cac:Country>
+                </cac:RegistrationAddress>
+            </cac:PartyLegalEntity>
+        </cac:Party>
+    </cac:AccountingSupplierParty>
+    <cac:AccountingCustomerParty>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID schemeAgencyName="PE:SUNAT" schemeID="6" schemeName="Documento de Identidad" schemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo06">20600058119</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyLegalEntity>
+                <cbc:RegistrationName>CENTENARIO DESARROLLO URBANO S.A.C</cbc:RegistrationName>
+                <cac:RegistrationAddress>
+                    <cbc:CityName>LIMA</cbc:CityName>
+                    <cbc:CountrySubentity>LIMA</cbc:CountrySubentity>
+                    <cbc:District>SAN ISIDRO</cbc:District>
+                    <cac:AddressLine>
+                        <cbc:Line>AV. VICTOR ANDRES BELAUNDE NRO. 147  INT.101 - LIMA - LIMA - SAN ISIDR</cbc:Line>
+                    </cac:AddressLine>
+                    <cac:Country>
+                        <cbc:IdentificationCode listAgencyName="United Nations Economic Commission for Europe" listID="ISO 3166-1" listName="Country">PE</cbc:IdentificationCode>
+                    </cac:Country>
+                </cac:RegistrationAddress>
+            </cac:PartyLegalEntity>
+            <cac:Contact>
+                <cbc:ElectronicMail>dmiyasatog@centenario.com.pe;jbravo@centenario.com.pe;vjimenezs@centenario.com.pe</cbc:ElectronicMail>
+            </cac:Contact>
+        </cac:Party>
+    </cac:AccountingCustomerParty>
+    <cac:PaymentTerms>
+        <cbc:ID>FormaPago</cbc:ID>
+        <cbc:PaymentMeansID>Credito</cbc:PaymentMeansID>
+        <cbc:Amount currencyID="PEN">286.34</cbc:Amount>
+    </cac:PaymentTerms>
+    <cac:PaymentTerms>
+        <cbc:ID>FormaPago</cbc:ID>
+        <cbc:PaymentMeansID>Cuota001</cbc:PaymentMeansID>
+        <cbc:Amount currencyID="PEN">286.34</cbc:Amount>
+        <cbc:PaymentDueDate>2021-10-22</cbc:PaymentDueDate>
+    </cac:PaymentTerms>
+    <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="PEN">43.68</cbc:TaxAmount>
+        <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="PEN">1252.66</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="PEN">43.68</cbc:TaxAmount>
+            <cac:TaxCategory>
+                <cac:TaxScheme>
+                    <cbc:ID schemeAgencyName="PE:SUNAT" schemeName="Codigo de tributos" schemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo05">1000</cbc:ID>
+                    <cbc:Name>IGV</cbc:Name>
+                    <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+                </cac:TaxScheme>
+            </cac:TaxCategory>
+        </cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:LegalMonetaryTotal>
+        <cbc:LineExtensionAmount currencyID="PEN">1252.66</cbc:LineExtensionAmount>
+        <cbc:TaxInclusiveAmount currencyID="PEN">286.34</cbc:TaxInclusiveAmount>
+        <cbc:AllowanceTotalAmount currencyID="PEN">0.00</cbc:AllowanceTotalAmount>
+        <cbc:ChargeTotalAmount currencyID="PEN">0.00</cbc:ChargeTotalAmount>
+        <cbc:PrepaidAmount currencyID="PEN">0.00</cbc:PrepaidAmount>
+        <cbc:PayableRoundingAmount currencyID="PEN">0.00</cbc:PayableRoundingAmount>
+        <cbc:PayableAmount currencyID="PEN">286.34</cbc:PayableAmount>
+    </cac:LegalMonetaryTotal>
+    <cac:InvoiceLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:InvoicedQuantity unitCode="GLL" unitCodeListAgencyName="United Nations Economic Commission for Europe" unitCodeListID="UN/ECE rec 20">17.796</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="PEN">1252.66</cbc:LineExtensionAmount>
+        <cac:PricingReference>
+            <cac:AlternativeConditionPrice>
+                <cbc:PriceAmount currencyID="PEN">16.0901</cbc:PriceAmount>
+                <cbc:PriceTypeCode listAgencyName="PE:SUNAT" listName="Tipo de Precio" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo16">01</cbc:PriceTypeCode>
+            </cac:AlternativeConditionPrice>
+        </cac:PricingReference>
+        <cac:TaxTotal>
+            <cbc:TaxAmount currencyID="PEN">43.68</cbc:TaxAmount>
+            <cac:TaxSubtotal>
+                <cbc:TaxableAmount currencyID="PEN">1252.66</cbc:TaxableAmount>
+                <cbc:TaxAmount currencyID="PEN">43.68</cbc:TaxAmount>
+                <cac:TaxCategory>
+                    <cbc:Percent>18</cbc:Percent>
+                    <cbc:TaxExemptionReasonCode listAgencyName="PE:SUNAT" listName="Afectacion del IGV" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo07">10</cbc:TaxExemptionReasonCode>
+                    <cac:TaxScheme>
+                        <cbc:ID schemeAgencyName="PE:SUNAT" schemeName="Codigo de tributos" schemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo05">1000</cbc:ID>
+                        <cbc:Name>IGV</cbc:Name>
+                        <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+                    </cac:TaxScheme>
+                </cac:TaxCategory>
+            </cac:TaxSubtotal>
+        </cac:TaxTotal>
+        <cac:Item>
+            <cbc:Description>PRIMAX GASOHOL 95~~~286.34</cbc:Description>
+            <cac:SellersItemIdentification>
+                <cbc:ID>40002047</cbc:ID>
+            </cac:SellersItemIdentification>
+            <cac:CommodityClassification>
+                <cbc:ItemClassificationCode listAgencyName="GS1 US" listID="UNSPSC" listName="Item Classification">15101506</cbc:ItemClassificationCode>
+            </cac:CommodityClassification>
+            <cac:AdditionalItemProperty>
+                <cbc:Name>Gastos Art. 37 Renta: Número de Placa</cbc:Name>
+                <cbc:NameCode listAgencyName="PE:SUNAT" listName="Propiedad del item" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo55">7000</cbc:NameCode>
+                <cbc:Value>C5L311</cbc:Value>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="PEN">13.635648</cbc:PriceAmount>
+        </cac:Price>
+    </cac:InvoiceLine>
+</Invoice>

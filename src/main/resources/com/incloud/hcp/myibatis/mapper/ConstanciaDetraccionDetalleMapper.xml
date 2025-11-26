@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.ConstanciaDetraccionDetalleMapper">
+
+
+
+
+    <resultMap id="detraccionDetalleResultMap" type="com.incloud.hcp.dto.ConstanciaDetraccionProveedorDto">
+        <id property="idCostanciaDetalle" column="ID_CONSTANCIA_DETALLE"/>
+        <result property="nroConstancia" column="NRO_CONSTANCIA" />
+        <result property="emailProveedor" column="EMAIL" />
+        <result property="razonSocialProveedor" column="RAZON_SOCIAL" />
+    </resultMap>
+
+    <resultMap id="datosPdfResultMap" type="com.incloud.hcp.dto.ConstanciaDetraccionDetallePdfDto">
+        <id property="idConstanciaDetalle" column="idConstanciaDetalle"/>
+        <result property="nroConstancia" column="nroConstancia" />
+        <result property="tipoDocProveedor" column="tipoDocProveedor" />
+        <result property="nroDocProvedor" column="nroDocProveedor" />
+        <result property="razonSocialProv" column="razonSocialProv" />
+        <result property="codigoOperacion" column="codigoOperacion" />
+        <result property="nombreOperacion" column="nombreOperacion" />
+        <result property="codigoBienServ" column="codigoBienServ" />
+        <result property="nombreBienServ" column="nombreBienServ" />
+        <result property="montoDeposito" column="montoDeposito" />
+        <result property="periodoTributario" column="periodoTributario" />
+        <result property="tipoComprobante" column="tipoComprobante" />
+        <result property="nroComprobante" column="nroComprobante" />
+        <result property="fechaDoc" column="fechaDoc" />
+
+    </resultMap>
+
+
+    <select id="obtenerListaProveedores" resultMap="detraccionDetalleResultMap">
+        SELECT
+        cdd.ID_CONSTANCIA_DETALLE,
+        cdd.NRO_CONSTANCIA,
+        p.EMAIL,
+        p.RAZON_SOCIAL
+        FROM CONSTANCIA_DETRACCION_DETALLE cdd
+        INNER JOIN PROVEEDOR p ON cdd.NRO_DOC_PROVEEDOR = p.RUC
+        WHERE cdd.ENVIA_CORREO = FALSE;
+    </select>
+
+    <select id="obtenerPdfConstancia" resultMap="datosPdfResultMap">
+        SELECT
+            cdd.ID_CONSTANCIA_DETALLE AS idConstanciaDetalle
+             ,cdd.RAZON_SOCIAL_PROV AS razonSocialProv
+             , cdd.NRO_DOC_PROVEEDOR AS nroDocProveedor
+             , cdd.TIPO_DOC_PROVEEDOR AS tipoDocProveedor
+             , to_char(cd.FECHA_PAGO, 'dd/mm/yyyy') AS fechaDoc
+             , cdd.CODIGO_OPERACION AS codigoOperacion
+             , cdD.NOMBRE_OPERACION AS nombreOperacion
+             , cdd.TIPO_COMPROBANTE AS tipoComprobante
+             , cdd.NRO_COMPROBANTE AS nroComprobante
+             , cdd.NRO_CONSTANCIA  AS nroConstancia
+             , cdd.MONTO_DEPOSITO AS montoDeposito
+             , cdd.CODIGO_BIEN_SERV AS codigoBienServ
+             , cdd.NOMBRE_BIEN_SERV AS nombreBienServ
+             , cdd.PERIODO_TRIBUTARIO AS periodoTributario
+        FROM CONSTANCIA_DETRACCION cd
+            INNER JOIN CONSTANCIA_DETRACCION_DETALLE cdd
+                ON cd.ID_CONSTANCIA_DETR = cdd.ID_CONSTANCIA_DETR
+        WHERE cdd.ID_CONSTANCIA_DETALLE = #{idDetalleConstancia};
+    </select>
+
+
+
+
+</mapper>

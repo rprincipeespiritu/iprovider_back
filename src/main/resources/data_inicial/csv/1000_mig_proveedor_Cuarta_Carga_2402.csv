@@ -1,0 +1,5 @@
+id;acreedorCodigoSap;ruc;telefono;idCondicionPago;idMoneda;idTipoProveedor;email;razonSocial;tipoPersona;direccionFiscal;emailRetencion
+1;1000764;20392512218;;NT90;USD;1;mark.hilario@mambo.pe;MAMBO TLV S.A.;J;AV. LA MAR NRO. 1120 INT. 4 ;
+2;1000533;20600544196;;NT60;USD;1;jcaceres@american-tasaciones.com.pe;AMERICAN TASACIONES S.A.C.;J;AV. RICARDO RIVERA NAVARRETE NRO. 395 INT. 1604 URB. JARDIN (CRUCE CON AV. JAVIER PRADO);
+3;1001483;20610645403;;NT90;PEN;1;xabiel.rodriguez@innosystem.biz;INNOSYSTEM S.A.C.;J;AV. CANADA NRO. 1180 DPTO. 703 URB. SANTA CATALINA;
+4;1000511;20525138985;;NT30;PEN;1;tessy.benel@experian.com;EXPERIAN PERU S.A.C.;J;AV. ENRIQUE CANAVAL Y MOREYRA NRO 480 URB. LIMATAMBO;

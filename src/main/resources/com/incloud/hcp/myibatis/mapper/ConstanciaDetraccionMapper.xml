@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.incloud.hcp.myibatis.mapper.ConstanciaDetraccionMapper">
+
+
+
+
+    <resultMap id="detraccionResultMap" type="com.incloud.hcp.dto.ConstanciaDetraccionDto">
+        <id property="idCostanciaDetalle" column="idConstanciaDetalle"/>
+        <result property="razonSocial" column="razonSocialProv" />
+        <result property="nroDocProv" column="nroProvedor" />
+        <result property="fechaDoc" column="fechaDoc" jdbcType="TIMESTAMP" />
+        <result property="tipoComprobante" column="tipoComprobante" />
+        <result property="nroComprobante" column="nroComprobante" />
+        <result property="nroConstancia" column="nroConstancia" />
+        <result property="montoDeposito" column="monedaMonto" />
+    </resultMap>
+
+
+    <select id="getListaDetracciones" resultMap="detraccionResultMap">
+        SELECT
+            cdd.ID_CONSTANCIA_DETALLE AS idConstanciaDetalle,
+            cdd.RAZON_SOCIAL_PROV AS razonSocialProv,
+            cdd.NRO_DOC_PROVEEDOR AS nroProvedor,
+            to_char(cd.FECHA_PAGO, 'dd/mm/yyyy') AS fechaDoc,
+            cdd.TIPO_COMPROBANTE AS tipoComprobante,
+            cdd.NRO_COMPROBANTE AS nroComprobante,
+            cdd.NRO_CONSTANCIA  AS nroConstancia,
+            cdd.MONTO_DEPOSITO AS monedaMonto
+        FROM CONSTANCIA_DETRACCION cd
+            INNER JOIN CONSTANCIA_DETRACCION_DETALLE cdd
+            ON cd.ID_CONSTANCIA_DETR = cdd.ID_CONSTANCIA_DETR
+        WHERE 1 = 1
+        <if test="razonSocial != null and razonSocial != ''">
+          AND cdd.RAZON_SOCIAL_PROV LIKE '%' || #{razonSocial} ||'%'
+        </if>
+        <if test="fechaInicio != null">
+            AND cd.FECHA_PAGO &gt;= #{fechaInicio}
+        </if>
+        <if test="fechaFin != null">
+            AND cd.FECHA_PAGO &lt;= #{fechaFin}
+        </if>
+        <if test="nroComprobante != null and nroComprobante != ''">
+            AND cdd.NRO_COMPROBANTE LIKE '%' || #{nroComprobante} || '%'
+        </if>
+        <if test="ruc != null and ruc != ''">
+            AND cdd.NRO_DOC_PROVEEDOR LIKE '%' || #{ruc} || '%'
+        </if>
+        ORDER BY cd.FECHA_PAGO DESC;
+    </select>
+
+</mapper>

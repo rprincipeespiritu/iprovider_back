@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<iprovidertopitop>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.incloud.hcp.Application",
+            "projectName": "iprovidertopitop",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

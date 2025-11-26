@@ -1,0 +1,210 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    
+    <table style="width: 100%; border-collapse: collapse;">
+        <tbody>
+            <tr>
+                <td style="width: 20%; text-align: center; padding: 10px;" rowspan="3">
+                    <!--<img src="cid:${LOGO_JRC}" width="200" style="height: 50px;display:block;" alt="Imagen" />-->
+                    <img width="100%" src="${JRC_LOGO}"  alt="Imagen" 
+                        style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
+                    />
+                    
+                    <!--<img width="100%" src="jrclogo.jpg"  alt="Imagen" 
+                        style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
+                    />-->
+
+                    <!--<img width="100%" src="https://redmin.pe/wp-content/uploads/2023/12/JRC-Logo.jpg"  alt="Imagen" 
+                        style="display: block; margin: 0 auto; max-width: 100%; height: auto;"
+                    />-->
+                </td>
+                <td style="width: 50%; text-align: left; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;" ><strong>JRC INGENIERIA Y CONSTRUCCION SAC</strong></td>
+                <td style="width: 30%; background-color: black; color: white; text-align: left; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;" colspan="2"><strong>ORDEN DE COMPRA N° ${ORDEN_COMPRA}</strong></td>
+            </tr>
+            <tr>
+                <td style="text-align: left; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;">20508891149</td>
+                <td style="text-align: right; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;"><strong>Fecha</strong></td>
+                <td style="text-align: left; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;">${FECHA}</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;">AV.JORGE BASADRE NRO.233 INT.601CENTRO EMPRESARIAL BASADRE 233 (INT. 601-602) LIMA LIMA </td>
+                <td style="text-align: right; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;"><strong>Tipo Orden</strong></td>
+                <td style="text-align: left; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;">Orden Regular</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 20px;">
+        <tbody>
+            <tr>
+                <td style="width: 50%; background-color: black; color: white; text-align: left; padding: 10px; border: 1px solid black; font-family: Arial, sans-serif; font-size: 11px;" colspan="2"><strong>PROVEEDOR:</strong></td>
+                <td style="width: 50%; background-color: black; color: white; text-align: left; padding: 10px; border: 1px solid black; font-family: Arial, sans-serif; font-size: 11px;" colspan="2"><strong>LUGAR ENTREGA:</strong></td>
+            </tr>
+            <tr>
+                <td style="text-align: left; padding: 10px; border: 1px solid black; font-family: Arial, sans-serif; font-size: 10px;" colspan="2">${PROVEEDOR}</td>
+                <td style="text-align: left; padding: 10px; border: 1px solid black; font-family: Arial, sans-serif; font-size: 10px;" colspan="2">${LUGAR_ENTREGA}</td>
+            </tr>
+            <tr>
+                <td style="background-color: black; color: white; text-align: left; padding: 10px; border: 1px solid black; font-family: Arial, sans-serif; font-size: 11px;"><strong>COMPRADOR:</strong></td>
+                <td style="background-color: black; color: white; text-align: left; padding: 10px; border: 1px solid black; font-family: Arial, sans-serif; font-size: 11px;"><strong>SOLICITANTE:</strong></td>
+                <td style="background-color: black; color: white; text-align: left; padding: 10px; border: 1px solid black; font-family: Arial, sans-serif; font-size: 11px;" colspan="2"><strong>FACTURAR A:</strong></td>
+            </tr>
+            <tr>
+                <td style="text-align: left; padding: 10px; border: 1px solid black; font-family: Arial, sans-serif; font-size: 10px;">${COMPRADOR}</td>
+                <td style="text-align: left; padding: 10px; border: 1px solid black; font-family: Arial, sans-serif; font-size: 10px;">${SOLICITANTE}</td>
+                <td style="text-align: left; padding: 10px; border: 1px solid black; font-family: Arial, sans-serif; font-size: 10px;" colspan="2">${FACTURAR_A}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid black; margin-top: 20px;">
+        <thead>
+            <tr>
+                <th style="width: 50%; background-color: black; color: white; text-align: center; padding: 10px; border: 1px solid black; font-family: Arial, sans-serif; font-size: 11px;">CONDICIONES DE PAGO</th>
+                <th style="width: 50%; background-color: black; color: white; text-align: center; padding: 10px; border: 1px solid black; font-family: Arial, sans-serif; font-size: 11px;">MONEDA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="text-align: center; padding: 10px; border: 1px solid black; font-family: Arial, sans-serif; font-size: 10px;">${CONDICION_PAGO}</td>
+                <td style="text-align: center; padding: 10px; border: 1px solid black; font-family: Arial, sans-serif; font-size: 10px;">${MONEDA}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+        <thead>
+            <tr>
+                <th style="background-color: black; color: white; text-align: center; padding: 10px; font-family: Arial, sans-serif; font-size: 9px;">LINEA</th>
+                <th style="background-color: black; color: white; text-align: center; padding: 10px; font-family: Arial, sans-serif; font-size: 9px;">SOLICITUD</th>
+                <th style="background-color: black; color: white; text-align: center; padding: 10px; font-family: Arial, sans-serif; font-size: 9px;">ARTICULO</th>
+                <th style="background-color: black; color: white; text-align: center; padding: 10px; font-family: Arial, sans-serif; font-size: 9px;">CANTIDAD</th>
+                <th style="background-color: black; color: white; text-align: center; padding: 10px; font-family: Arial, sans-serif; font-size: 9px;">UNIDAD</th>
+                <th style="background-color: black; color: white; text-align: center; padding: 10px; font-family: Arial, sans-serif; font-size: 9px;">FECHA REQUERIDA</th>
+                <th style="background-color: black; color: white; text-align: center; padding: 10px; font-family: Arial, sans-serif; font-size: 9px;">FECHA ENTREGA</th>
+                <th style="background-color: black; color: white; text-align: center; padding: 10px; font-family: Arial, sans-serif; font-size: 9px;">PRECIO</th>
+                <th style="background-color: black; color: white; text-align: center; padding: 10px; font-family: Arial, sans-serif; font-size: 9px;">PRECIO EXT</th>
+                <th style="background-color: black; color: white; text-align: center; padding: 10px; font-family: Arial, sans-serif; font-size: 9px;">SEDE</th>
+            </tr>
+        </thead>
+        <tbody>
+            ${TRS}
+        </tbody>
+    </table>
+
+    <table style="width: 100%; border-collapse: collapse; margin-top: 50px;">
+        <tbody>
+            <tr>
+                <td style="width: 30%; background-color: white; color: black; text-align: left; padding: 10px; font-family: Arial, sans-serif; font-size: 9px;">
+                   
+                    <!--<img width="100px" src="word\firma.jpg"  alt="Imagen" 
+                        style="display: block; margin: 0 auto; max-width: 100px; height: auto;"
+                    />
+
+                    <img width="100px" src="firma.jpg"  alt="Imagen" 
+                        style="display: block; margin: 0 auto; max-width: 100px; height: auto;"
+                    />
+
+                    <img width="100px" src="com/incloud/hcp/templates/img/jrclogo.jpg"  alt="Imagen" 
+                        style="display: block; margin: 0 auto; max-width: 100px; height: auto;"
+                    />
+
+                    <img width="100px" src="src\main\resources\com\incloud\hcp\templates\img\jrclogo.jpg"  alt="Imagen" 
+                        style="display: block; margin: 0 auto; max-width: 100px; height: auto;"
+                    />-->
+
+                    <img width="100px" src="${JRC_FIRMA}"  alt="Imagen" 
+                        style="display: block; margin: 0 auto; max-width: 100px; height: auto;"
+                    />
+                    
+                    
+                </td>
+                <td style="width: 30%; background-color: white; color: white; text-align: left; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;"></td>
+                <td style="width: 20%; background-color: white; color: white; text-align: left; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;"></td>
+                <td style="width: 20%; background-color: white; color: white; text-align: left; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;"></td>
+            </tr>
+            <tr>
+                <td style="width: 30%; background-color: white; color: black; text-align: left; padding: 10px; font-family: Arial, sans-serif; font-size: 9px;">
+                Antonio Quispe - VP Administración y Finanzas                        
+                </td>
+                <td style="width: 30%; background-color: white; color: white; text-align: left; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;"></td>
+                <td style="width: 20%; background-color: white; color: white; text-align: left; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;"></td>
+                <td style="width: 20%; background-color: white; color: black; text-align: left; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;"></td>
+            </tr>
+        </tbody>
+    </table>
+   
+
+    <table style="width: 100%; border-collapse: collapse; margin-top: 50px;">
+        <tbody>
+            <tr>
+                <td style="width: 70%; background-color: white; color: black; text-align: left; padding: 10px; border: 1px solid black; font-family: Arial, sans-serif; font-size: 9px;" rowspan="3">
+                    <p style="margin-left: 40px;">***** LUGAR DE ENTREGA</p>
+                    <p style="margin-left: 40px;">- Remitir la mercadería con Guía de Remisión y copia de Orden de Compra<br></br>
+                        No se aceptarán entregas ni facturas parciales sin autorización previa</p>
+                </td>
+                <td style="width: 10%; background-color: white; color: white; text-align: left; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;"></td>
+                <td style="width: 10%; background-color: black; color: white; text-align: right; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;">SUBTOTAL</td>
+                <td style="width: 10%; background-color: white; color: black; text-align: right; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;">${SUB_TOTAL}</td>
+            </tr>
+            <tr>
+                <td style="background-color: white; color: black; text-align: left; padding: 10px;  font-family: Arial, sans-serif; font-size: 10px;"></td>
+                <td style="background-color: white; color: black; text-align: right; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;">IGV</td>
+                <td style="background-color: white; color: black; text-align: right; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;">${IGV}</td>
+            </tr>
+            <tr>
+                <td style="background-color: white; color: black; text-align: left; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;"></td>
+                <td style="background-color: white; color: black; text-align: right; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;">TOTAL</td>
+                <td style="background-color: white; color: black; text-align: right; padding: 10px; font-family: Arial, sans-serif; font-size: 10px;">${TOTAL}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="margin-top: 20px;">
+
+        <p style="font-family: Arial, sans-serif; font-size: 9px;"><strong>Condiciones Generales.</strong></p>
+        <p style="font-family: Arial, sans-serif; font-size: 9px;">En caso que la entrega de los Bienes en el lugar de destino (incluyendo toda la documentación respectiva) se demore más allá de la fecha acordada, el PROVEEDOR deberá 
+            pagar, a menos que se acuerde algo distinto por escrito, una penalidad por retraso.
+            La penalidad se aplicará y se calculará de acuerdo a la siguiente fórmula: <strong>Penalidad diaria = 1% * Monto del Contrato</strong></p>
+        
+        <br></br>
+
+        <p style="font-family: Arial, sans-serif; font-size: 9px;">La penalidad se aplicará al PROVEEDOR hasta por un monto máximo equivalente al diez por ciento (10%) del monto contractual. Cuando se llegue a cu/brir el monto máximo de la 
+            penalidad, el COMPRADOR podrá resolver el Contrato por incumplimiento.
+            El pago de la penalidad es sin perjuicio del derecho del COMPRADOR a la debida compensación por cualquier daño ulterior.</p>
+
+        
+        <p style="font-family: Arial, sans-serif; font-size: 9px;">
+            <strong>
+                "LOS MATERIALES Y EQUIPOS DEBEN SER ENTREGADOS DEBIDAMENTE EMBALADOS PARA SER TRANSPORTADOS ADECUADAMENTE A LAS SEDES EN 
+            PROVINCIA. EN LOS CASOS QUE CORRESPONDA DEBEN ESTAR EN PARIHUELAS Y/O EN CAJAS DE MADERA, ENSUNCHADOS, CON STRECH FILM Y ROTULADOS 
+            INDICANDO N° OC/ SEDE/ COMPRADOR."
+            <br></br>
+            ASIMISMO, ADJUNTAR, SEGÚN CORRESPONDA:
+            <br></br>
+            - HOJA DE SEGURIDAD (MSDS)
+            <br></br>
+            - CERTIFICADO DE CALIDAD
+            <br></br>
+            - CERTIFICADOS DE CALI/brACIÓN (EQUIPOS DE MEDICION)
+            <br></br>
+            - CERTIFICADO VERDE (MEDIO AMBIENTE).
+            <br></br>
+            - CERTIFICADO DE PRUEBA HIDROSTÁTICA
+            </strong>
+        </p>
+        
+        <div style="height: 2px; width: 100%; background-color: black; border-color: black;  font-family: Arial, sans-serif; font-size: 9px;"></div>
+
+        <p style="font-family: Arial, sans-serif; font-size: 9px;">A partir del 1º de Noviem/bre del 2012 hemos sido designados como Agentes de Retención según Resolución de Superintendencia Nº 228-2012/SUNAT.
+            "Para la presentación de sus facturas adjuntar constancia de recepción generada por Logística JRC.”</p>
+        
+        <p style="font-family: Arial, sans-serif; font-size: 10px;"><strong>FO-03-JRC-PR-LO-01 / Versión 6 / Orden de Compra</strong></p>
+    </div>
+</body>
+</html>
