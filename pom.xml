@@ -529,7 +529,7 @@
 		<dependency>
 			<groupId>com.thoughtworks.xstream</groupId>
 			<artifactId>xstream</artifactId>
-			<version>1.4.10</version>
+			<version>1.4.20</version>
 		</dependency>
 
 		<!--SWAGGER-->
@@ -745,7 +745,8 @@
 			<artifactId>ngdbc</artifactId>-->
 			<groupId>com.sap.cloud.db.jdbc</groupId>
     		<artifactId>ngdbc</artifactId>
-			<version>2.4.63</version>
+            <version>2.19.11</version>
+			<!--<version>2.4.63</version>-->
 			<!--<version>2.4.76</version>-->
 		</dependency>
 
@@ -826,9 +827,16 @@
 
 		<!-- Thanks for using https://jar-download.com -->
 
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>2.0.29</version>
+        </dependency>
 
 
-	</dependencies>
+
+
+    </dependencies>
 
 	<build>
 		<finalName>iprovidertopitopback</finalName>

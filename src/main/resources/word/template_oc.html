@@ -206,5 +206,30 @@
         
         <p style="font-family: Arial, sans-serif; font-size: 10px;"><strong>FO-03-JRC-PR-LO-01 / Versión 6 / Orden de Compra</strong></p>
     </div>
+
+    <!-- CONDICIONES GENERALES -->
+    <div style="padding: 30px;">
+
+        <!-- O mostrar texto extraído -->
+        #if($CONDICIONES_TEXTO_HTML)
+        ${CONDICIONES_TEXTO_HTML}
+        #end
+
+    </div>
+
+    <!-- ACEPTACIÓN DEL PROVEEDOR
+    <div style="page-break-before: always; padding: 40px; border: 2px solid #003366;">
+        <h3 style="text-align: center;">ACEPTACIÓN DEL PROVEEDOR</h3>
+        <p>El Proveedor deberá remitir el Contrato firmado...</p>
+
+        <div style="margin-top: 40px;">
+            <p><strong>Razón Social:</strong> _________________________________</p>
+            <p><strong>Representante Legal:</strong> _________________________________</p>
+            <p><strong>RUC:</strong> _________________________________</p>
+            <p><strong>Firma:</strong></p>
+            <div style="margin-top: 60px; border-top: 2px solid #000; width: 300px;"></div>
+        </div>
+    </div>-->
+
 </body>
 </html>

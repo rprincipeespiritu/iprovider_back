@@ -19,6 +19,7 @@ import com.sap.cloud.sdk.s4hana.connectivity.DefaultErpHttpDestination;
 import io.vavr.control.Try;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
 import org.apache.http.HttpEntity;
@@ -64,6 +65,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.Base64;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.text.PDFTextStripper;
+//import java.io.InputStream;
 import java.io.*;
 
 @Service
@@ -692,6 +696,17 @@ public class JCOOrdenCompraPdfServiceImpl implements JCOOrdenCompraPdfService {
             String detallesHtml = detallesx.toString();
             context.put("TRS", detallesHtml);
 
+            // ========== AGREGAR CONDICIONES GENERALES ==========
+            System.out.println("Procesando PDF de Condiciones Generales...");
+            /*String pdfBase64 = convertirPDFaBase64("word/Condiciones_Generales_de_Contratacion_Bienes_y_Servicios_JRC.pdf");
+            if (!pdfBase64.isEmpty()) {
+                context.put("PDF_CONDICIONES_BASE64", pdfBase64);
+            }
+             */
+            String textoCondiciones = extraerTextoPDFComoHTML("word/Condiciones_Generales_de_Contratacion_Bienes_y_Servicios_JRC.pdf");
+            if (!textoCondiciones.isEmpty()) {
+                context.put("CONDICIONES_TEXTO_HTML", textoCondiciones);
+            }
 
             String content = Optional.ofNullable(data)
                     .map(url -> url + "")
@@ -1022,4 +1037,287 @@ public class JCOOrdenCompraPdfServiceImpl implements JCOOrdenCompraPdfService {
         return tramaXml;
 
     }
+
+    /**
+     * Método 1: Convertir PDF a Base64 para embeber en HTML
+     * Este es el método RECOMENDADO
+     */
+    private String convertirPDFaBase64(String rutaPDF) {
+        try {
+            /*
+            // Leer el archivo PDF desde resources
+            InputStream pdfInputStream = getClass().getClassLoader().getResourceAsStream(rutaPDF);
+
+            if (pdfInputStream == null) {
+                System.err.println("ERROR: No se encontró el archivo PDF: " + rutaPDF);
+                return "";
+            }
+
+            // Leer bytes del PDF
+            byte[] pdfBytes = pdfInputStream.readAllBytes();
+
+            // Convertir a Base64
+            String base64PDF = Base64.getEncoder().encodeToString(pdfBytes);
+
+            // Cerrar stream
+            pdfInputStream.close();
+
+            System.out.println("PDF convertido a Base64 exitosamente. Tamaño: " + base64PDF.length() + " caracteres");
+            return base64PDF;
+
+             */
+            // Leer el archivo PDF desde resources
+            InputStream pdfInputStream = getClass().getClassLoader().getResourceAsStream(rutaPDF);
+
+            if (pdfInputStream == null) {
+                System.err.println("ERROR: No se encontró el archivo PDF: " + rutaPDF);
+                return "";
+            }
+
+            // ⭐ USAR IOUtils en lugar de readAllBytes() ⭐
+            byte[] pdfBytes = IOUtils.toByteArray(pdfInputStream);
+
+            // Convertir a Base64
+            String base64PDF = Base64.getEncoder().encodeToString(pdfBytes);
+
+            // Cerrar stream
+            pdfInputStream.close();
+
+            System.out.println("✓ PDF convertido a Base64 exitosamente. Tamaño: " + base64PDF.length() + " caracteres");
+            return base64PDF;
+
+        } catch (Exception e) {
+            System.err.println("ERROR al convertir PDF a Base64: " + e.getMessage());
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+    /**
+     * Método 2: Extraer texto del PDF y convertirlo a HTML
+     * Usa este método si quieres el contenido del PDF como texto HTML
+     */
+    private String extraerTextoPDFComoHTML(String rutaPDF) {
+        try {
+            InputStream pdfInputStream = getClass().getClassLoader().getResourceAsStream(rutaPDF);
+
+            if (pdfInputStream == null) {
+                System.err.println("ERROR: No se encontró el archivo PDF: " + rutaPDF);
+                return "";
+            }
+
+            // Usar Apache PDFBox para extraer texto
+            PDDocument document = PDDocument.load(pdfInputStream);
+            PDFTextStripper stripper = new PDFTextStripper();
+            String text = stripper.getText(document);
+            document.close();
+
+            // Convertir texto a HTML con formato
+            StringBuilder htmlCondiciones = new StringBuilder();
+
+            htmlCondiciones.append("<div style='page-break-before: always; padding: 5px;'>");
+            /*
+            htmlCondiciones.append("<h2 style='text-align: center; font-family: Arial, sans-serif; color: #003366;'>CONDICIONES GENERALES DE CONTRATACIÓN</h2>");
+            htmlCondiciones.append("<h3 style='text-align: center; font-family: Arial, sans-serif;'>PARA ORDEN DE COMPRA</h3>");
+            htmlCondiciones.append("<div style='font-family: Arial, sans-serif; font-size: 9px; line-height: 1.6; text-align: justify;'>");
+            */
+            htmlCondiciones.append("<div style='font-family: Arial, sans-serif; font-size: 8px; line-height: 1.2; text-align: justify;'>");
+            // Procesar líneas y agregar formato
+            String[] lineas = text.split("\n");
+            boolean tituloYaProcesado = false;
+            boolean procesandoTitulo = false;
+            int lineasIgnoradas = 0;
+
+            for (int i = 0; i < lineas.length; i++) {
+                String lineaTrimmed = lineas[i].trim();
+
+                // Ignorar líneas vacías y número de página
+                if (lineaTrimmed.isEmpty() ||
+                        lineaTrimmed.matches("Página \\d+ de \\d+")) {
+                    continue;
+                }
+
+               if (tituloYaProcesado) {
+                    // Si ya procesamos el título, ignorar cualquier línea que lo contenga
+                    if (lineaTrimmed.toUpperCase().contains("CONDICIONES GENERALES") ||
+                            lineaTrimmed.toUpperCase().contains("PARA ORDEN DE COMPRA")) {
+                        lineasIgnoradas++;
+                        System.out.println("⊗ [Línea " + lineasIgnoradas + "] Ignorando título duplicado: " + lineaTrimmed);
+                        continue;  //CRÍTICO: Saltar completamente esta línea
+                    }
+                }
+
+                if (!tituloYaProcesado &&
+                        lineaTrimmed.toUpperCase().contains("CONDICIONES GENERALES")) {
+
+                    // Iniciar título compacto en barra azul
+                    htmlCondiciones.append("<div style='text-align: center; background-color: #003366; ")
+                            .append("color: white; font-size: 10px; font-weight: bold; ")
+                            .append("padding: 4px; margin: 0 0 8px 0;'>")
+                            .append(escapeHtml(lineaTrimmed));
+
+                    procesandoTitulo = true;
+                    System.out.println("[Primera vez] Procesando título: " + lineaTrimmed);
+                    continue;
+                }
+
+                // Segunda línea del título (si existe)
+                if (procesandoTitulo &&
+                        lineaTrimmed.toUpperCase().contains("PARA ORDEN")) {
+
+                    htmlCondiciones.append(" ")
+                            .append(escapeHtml(lineaTrimmed))
+                            .append("</div>");
+
+                    procesandoTitulo = false;
+                    tituloYaProcesado = true;
+                    System.out.println("✓ Título completo procesado. No se repetirá en páginas siguientes.");
+                    continue;
+                }
+
+                // Si el título era de una sola línea
+                if (procesandoTitulo) {
+                    htmlCondiciones.append("</div>");
+                    procesandoTitulo = false;
+                    tituloYaProcesado = true;
+                }
+
+                //SECCIÓN "EL PROVEEDOR" - PROCESAMIENTO COMPLETO
+                if (lineaTrimmed.toUpperCase().equals("EL PROVEEDOR")) {
+                    System.out.println("✓ [Línea " + i + "] Detectada sección EL PROVEEDOR");
+
+                    // Generar cuadro rojo con la sección completa
+                    htmlCondiciones.append("<div style='border: 3px solid #dc3545; padding: 20px; margin: 15px 0; background-color: #fff;'>");
+
+                    // Título
+                    htmlCondiciones.append("<h3 style='color: #003366; font-size: 11px; margin: 0 0 20px 0; font-weight: bold; text-align: left;'>")
+                            .append("EL PROVEEDOR")
+                            .append("</h3>");
+
+                    // Campo: Razón Social CON LÍNEA
+                    htmlCondiciones.append("<div style='margin-bottom: 20px;'>");
+                    htmlCondiciones.append("<p style='margin: 0 0 5px 0; font-size: 9px; font-weight: bold;'>Razón Social:</p>");
+                    htmlCondiciones.append("<div style='border-bottom: 2px solid #000; height: 20px; width: 100%;'>&nbsp;</div>");
+                    htmlCondiciones.append("</div>");
+
+                    // Campo: Representante legal CON LÍNEA
+                    htmlCondiciones.append("<div style='margin-bottom: 20px;'>");
+                    htmlCondiciones.append("<p style='margin: 0 0 5px 0; font-size: 9px; font-weight: bold;'>Representante legal:</p>");
+                    htmlCondiciones.append("<div style='border-bottom: 2px solid #000; height: 20px; width: 100%;'>&nbsp;</div>");
+                    htmlCondiciones.append("</div>");
+
+                    // Campo: RUC CON LÍNEA
+                    htmlCondiciones.append("<div style='margin-bottom: 20px;'>");
+                    htmlCondiciones.append("<p style='margin: 0 0 5px 0; font-size: 9px; font-weight: bold;'>RUC:</p>");
+                    htmlCondiciones.append("<div style='border-bottom: 2px solid #000; height: 20px; width: 100%;'>&nbsp;</div>");
+                    htmlCondiciones.append("</div>");
+
+                    // Campo: Firma CON CUADRO GRANDE (100px altura)
+                    htmlCondiciones.append("<div style='margin-bottom: 20px;'>");
+                    htmlCondiciones.append("<p style='margin: 0 0 10px 0; font-size: 9px; font-weight: bold;'>Firma:</p>");
+                    htmlCondiciones.append("<div style='border: 2px solid #000; height: 100px; width: 100%; background-color: #fafafa;'>&nbsp;</div>");
+                    htmlCondiciones.append("</div>");
+
+
+                    // SALTAR TODAS LAS LÍNEAS DE ESTA SECCIÓN
+                    // Para evitar que se duplique el contenido
+
+                    i++; // Siguiente línea después de "EL PROVEEDOR"
+                    StringBuilder parrafoFinal = new StringBuilder();
+                    boolean encontradoParrafo = false;
+
+                    while (i < lineas.length) {
+                        String nextLine = lineas[i].trim();
+
+                        if (nextLine.isEmpty()) {
+                            i++;
+                            continue;
+                        }
+
+                        // SALTAR campos individuales (no los mostramos de nuevo)
+                        if (nextLine.equals("Razón Social:") ||
+                                nextLine.equals("Representante legal:") ||
+                                nextLine.equals("RUC:") ||
+                                nextLine.equals("Firma:")) {
+                            System.out.println("Saltando campo duplicado: " + nextLine);
+                            i++;
+                            continue;
+                        }
+
+                        // Detectar inicio del párrafo final
+                        if (nextLine.contains("Proveedor deberá remitir") ||
+                                nextLine.contains("El Proveedor deberá") ||
+                                (nextLine.contains("El") && nextLine.contains("Proveedor"))) {
+                            encontradoParrafo = true;
+                            System.out.println("Encontrado inicio del párrafo final");
+                        }
+
+                        // Recopilar párrafo final
+                        if (encontradoParrafo) {
+                            parrafoFinal.append(nextLine).append(" ");
+
+                            // Detectar fin del párrafo
+                            if (nextLine.contains("presente documento") ||
+                                    nextLine.contains("numeral 4")) {
+                                System.out.println("Encontrado fin del párrafo");
+                                i++;
+                                break;
+                            }
+                        }
+
+                        i++;
+                    }
+
+                    // Agregar párrafo final EN CURSIVA
+                    if (parrafoFinal.length() > 10) {
+                        htmlCondiciones.append("<p style='font-size: 8px; margin-top: 25px; line-height: 1.4; ");
+                        htmlCondiciones.append("font-style: italic; color: #555; text-align: justify;'>");
+                        htmlCondiciones.append(escapeHtml(parrafoFinal.toString().trim()));
+                        htmlCondiciones.append("</p>");
+                        System.out.println("Párrafo final agregado en cursiva (" + parrafoFinal.length() + " caracteres)");
+                    } else {
+                        // Párrafo por defecto si no se encontró
+                        htmlCondiciones.append("<p style='font-size: 8px; margin-top: 25px; line-height: 1.4; ");
+                        htmlCondiciones.append("font-style: italic; color: #555; text-align: justify;'>");
+                        htmlCondiciones.append("<em>El Proveedor deberá remitir el Contrato firmado por su representante legal. ");
+                        htmlCondiciones.append("En ausencia de ello, se considerará que el Proveedor ha aceptado y se ha ");
+                        htmlCondiciones.append("perfeccionado el Contrato expedido a su favor, de acuerdo al numeral 4. ");
+                        htmlCondiciones.append("Aceptación del presente documento.</em>");
+                        htmlCondiciones.append("</p>");
+                        System.out.println("Usando párrafo por defecto en cursiva");
+                    }
+
+                    htmlCondiciones.append("</div>");
+                    i--; // Retroceder porque el for incrementará
+
+                    System.out.println("Sección EL PROVEEDOR completa (sin duplicados)");
+                    continue;
+                }
+
+                if (!lineaTrimmed.isEmpty()) {
+                    // Detectar títulos (líneas en mayúsculas)
+                    if (lineaTrimmed.equals(lineaTrimmed.toUpperCase()) && lineaTrimmed.length() > 5) {
+                        htmlCondiciones.append("<h3 style='color: #003366; font-size: 10px; margin-top: 12px; margin-bottom: 6px; font-weight: bold;'>")
+                                .append(escapeHtml(lineaTrimmed))
+                                .append("</h3>");
+                    } else {
+                        htmlCondiciones.append("<p style='margin-top: 3px; margin-bottom: 3px; line-height: 1.3;'>")
+                                .append(escapeHtml(lineaTrimmed))
+                                .append("</p>");
+                    }
+                }
+            }
+
+            htmlCondiciones.append("</div></div>");
+
+            System.out.println("PDF extraído como HTML exitosamente");
+            return htmlCondiciones.toString();
+
+        } catch (Exception e) {
+            System.err.println("ERROR al extraer texto del PDF: " + e.getMessage());
+            e.printStackTrace();
+            return "";
+        }
+    }
+
 }
